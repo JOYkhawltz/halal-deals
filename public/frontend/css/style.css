@@ -1,0 +1,16 @@
+
+.cat-menu{}
+.cat-menu ul{ list-style-type: none; padding: 0; margin: 0;}
+.cat-menu ul li{ list-style-type: none; display: block; background-color: #ddd; padding: 10px;}
+.cat-menu ul li ul{ padding: 10px 0px 10px 25px;}
+.cat-menu ul li ul li{ padding: 5px;}
+.dz-preview .default-img-txt {
+    position: absolute;
+    top: -25px;
+    left: 20px;
+}
+.dz-preview .img-radio{
+    position: absolute;
+    top: -22px;
+    left: 0;
+}

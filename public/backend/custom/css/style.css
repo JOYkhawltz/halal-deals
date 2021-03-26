@@ -1,0 +1,20 @@
+.radio-list{
+    padding-left: 20px;
+}
+.table-scrollable{
+    border: none;
+}
+table.dataTable.no-footer {
+    border-bottom: none !important;
+}
+
+table.abmin-prof-tbl{ border-collapse:collapse; width:100%;}
+table.abmin-prof-tbl tr{}
+table.abmin-prof-tbl tr th{ border:#ddd solid 1px; padding:10px; width:15%; background-color:#e9eaea;}
+table.abmin-prof-tbl tr td{ border:#ddd solid 1px; padding:10px; background-color:#e9eaea;}
+table.abmin-prof-tbl tr:nth-child(odd) th {background: #f5f5f5}
+table.abmin-prof-tbl tr:nth-child(odd) td {background: #f5f5f5}
+.product-admin-sec{ padding-bottom:50px;}
+.product-admin-sec h2{ padding-bottom:10px; border-bottom:#eef1f5 solid 1px; text-text-transform:uppercase; font-weight:bold; font-size:20px;}
+.product-admin-sec ul{ padding-left:0px; list-style-type:disc;}
+.product-admin-sec ul li{ display:block; padding-top:5px; list-style-type:disc;}

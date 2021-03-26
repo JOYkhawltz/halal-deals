@@ -1,0 +1,6 @@
+.form .form-row-seperated .form-group {
+    border: none; 
+}
+.form .form-row-seperated .form-group .form-group {
+    padding: 0;
+}

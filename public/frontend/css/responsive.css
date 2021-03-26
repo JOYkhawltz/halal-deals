@@ -1,0 +1,159 @@
+
+
+@media only screen and (min-width: 960px) and (max-width:1069px) {
+
+    .banner-search-caption{ max-width: 800px;}
+    .top-banner h2{ font-size: 30px;}
+.tab_dsh_1.col-md-2.col-sm-3{
+    -webkit-box-flex: 0;
+    -ms-flex: 20%;
+    flex: 20%;
+    max-width: 30%;
+}
+.tab_dsh_2.col-md-10.col-sm-9{
+    -webkit-box-flex: 0;
+    -ms-flex: 80%;
+    flex: 80%;
+    max-width: 80%;
+}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+
+    .banner-search-caption{ max-width: 580px;}
+    .top-banner h2{ font-size: 25px; padding-bottom: 15px;}
+    .top-drop-btn a{ font-size: 10px;}
+    .deflt-btn{ font-size: 12px; padding: 8px 5px;}
+.tab_dsh_1.col-md-2.col-sm-3{
+    -webkit-box-flex: 0;
+    -ms-flex: 30%;
+    flex: 30%;
+    max-width: 30%;
+}
+.tab_dsh_2.col-md-10.col-sm-9{
+    -webkit-box-flex: 0;
+    -ms-flex: 70%;
+    flex: 70%;
+    max-width: 70%;
+}
+
+.px_mob-2 {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.footer-section .footer-top .footer-info .footer-social a {
+    margin-right: 5px;
+}
+}
+
+@media only screen and (max-width: 767px) {
+
+    .header-section.affix{ position: relative; width: 100%; z-index: 99;}
+    .nav-bar{ position: absolute; width: 200px; right: 0; top: 35px; background-color: #096802; z-index: 99;}
+    .top-bar{ padding: 10px 0px;}
+    .logo-section img{ max-height: 40px;}
+    .navbar-header{ display: block;}
+    .nav-bar{ display: none;}
+    .nav-bar ul{ text-align: center;}
+    .nav-bar ul li{ display: block; padding: 0;}
+    .nav-bar ul li a{ display: block; padding: 10px;}
+    .top-bar .topbar-left ul li{ padding-right: 10px;}
+    .top-bar .topbar-left ul li a{ font-size: 11px;}
+    .navbar-header .navbar-toggle{ padding-top: 0px;}
+    .logo-section{ text-align: center;}
+
+    .owl-carousel .owl-item img{ min-height: 150px;}
+    .top-search{ margin: 10px 0px;}
+    .body-box .body-box-inner .product-box{ margin-bottom: 30px;}
+    .subscribe-form{ margin-top: 15px;}
+    .footer-section .footer-top .footer-menu{ margin-top: 30px;}
+    
+    
+    .dash-left-menu {
+    background: #096802;
+    border-radius: 4px;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    top: 0;
+    margin-bottom: 15px;
+    max-width: 100%;
+}
+
+.footer-section .footer-top .footer-menu ul li a i {
+    padding-right: 0px;
+    color: #3baaff;
+}
+.footer-section .footer-top .footer-menu ul li a {
+    display: block;
+    font-size: 11px;
+    color: #fff;
+}
+.footer-section .footer-top .footer-menu ul li {
+    padding-top: 5px;
+}
+.px_mob-2{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.footer-section .footer-top .footer-menu h2 {
+    font-size: 11px;
+    color: #17c40a;
+    padding-bottom: 10px;
+    border-bottom: #606060 solid 1px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.custom-modal .modal-body .frm-btn button.deflt-btn {
+    padding: 10px 35px;
+    width: 100%;
+}
+
+.custom-modal .social-login a {
+    margin-bottom: 5px;
+}
+.form-log-in .social-login a {
+    margin-bottom: 5px;
+}
+#signup-form .form-group.text-right{
+    text-align: left !important;
+}
+#signup-form .form-group.text-right label{
+    margin-left: 0px !important;
+}
+#signup-form .form-group.text-left label{
+    margin-left: 0px !important;
+}
+.custom-modal .modal-header h4.modal-title {
+    padding: 5px 0px;
+}
+}
+
+@media only screen and (min-width: 550px) and (max-width: 767px) {
+
+    .banner-search-caption{ max-width: 400px;}
+    .top-banner h2{ font-size: 16px; line-height: 20px; padding-bottom: 15px;}
+    .banner-slider .owl-nav .owl-prev{ left: 5px;}
+    .banner-slider .owl-nav .owl-next{ right: 5px;}
+
+}
+
+@media only screen and (min-width: 480px) and (max-width: 549px) {
+
+    .banner-search-caption{ max-width: 300px;}
+    .top-banner h2{ font-size: 16px; line-height: 20px; padding-bottom: 15px;}
+    .banner-slider .owl-nav .owl-prev{ left: 5px;}
+    .banner-slider .owl-nav .owl-next{ right: 5px;}
+
+}
+
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+
+    .banner-search-caption{ max-width: 200px;}
+    .top-banner h2{ font-size: 13px; line-height: 15px; padding-bottom: 15px;}
+    .banner-slider .owl-nav .owl-prev{ left: 5px;}
+    .banner-slider .owl-nav .owl-next{ right: 5px;}
+
+}
