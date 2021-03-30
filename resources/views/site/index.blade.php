@@ -152,7 +152,7 @@
                                     @if(count($deal->product)>0)
                                     @if(isset($deal->product->defaultPic))
                                     <img class="img-fluid" src="{{ URL::asset('public/uploads/frontend/product/preview/'.$deal->product->defaultPic->image_name) }}"/>
-                                    <img style="position: absolute; right:32px; width:30px; height:30px; "src="{{($pages[2]->type==='2' && $pages[2]->content_body!='')?URL::asset('public/uploads/frontend/cms/pictures/'.$pages[2]->content_body):URL::asset('public/frontend/images/halal-tag.png')}}" />
+                                    <img style="position: absolute; right:32px; width:30px; height:30px; "src="{{URL::asset('public/frontend/images/halal-tag.png')}}" />
                                     @else
                                     <img class="img-fluid" src="{{ URL::asset('public/frontend/images/product1.png') }}"/>
                                     @endif
