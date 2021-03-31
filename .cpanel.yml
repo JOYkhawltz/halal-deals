@@ -1,0 +1,5 @@
+---
+deployment:
+ tasks:
+ - export DEPLOYPATH=/home/iezqafmlc572/public_html/halal-deals
+ - /bin/cp -R * $DEPLOYPATH
