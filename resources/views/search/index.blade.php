@@ -40,7 +40,7 @@
                                     @empty
                                     @endforelse
                                 </ul>
-                                <div class="filter_box">
+                                <!--<div class="filter_box">
                                 <h2>TEST</h2>
                                 <ul class="cust-scroll-table">
                                     @forelse($halals as $key => $value)
@@ -52,7 +52,7 @@
                                     </li>
                                     @empty
                                     @endforelse
-                                </ul>
+                                </ul>-->
                             </div>
                             
                             <div class="filter_box d-none">
@@ -132,8 +132,8 @@
                             </div> -->
                             <div class="filter_box">
                                 <div class="stl_drp">
-                                    <!--<select class="form-control selectpicker" name="halal_cert" onchange="loadProducts(0);">
-                                        <option value="">Select a Halal Cert</option>
+                                    <select class="form-control selectpicker" multiple title="Select a Halal Cert" name="halal_cert" onchange="loadProducts(0);">
+                                        
                                         <option value="1">HMC Approved</option>
                                         <option value="2">HFA Approved</option>
                                         <option value="3">Other Certification</option>
@@ -141,8 +141,8 @@
                                         <option value="5">Non halal meat also served</option>
                                         <option value="6">Halal upon request only-predominantly non halal meat served</option>
                                         <option value="7">N/A</option>
-                                    </select> -->
-                                    <select class="form-control selectpicker" name="halal_cert" onchange="loadProducts(0);">
+                                    </select>
+                                    <!--<select class="form-control selectpicker" name="halal_cert" onchange="loadProducts(0);">
                                     <ul>
                                     @forelse($halals as $key => $value)
                                     <li>
@@ -154,14 +154,14 @@
                                     
                                     @empty
                                     @endforelse
-                                </ul>
-                                </select>
+                                    </ul>
+                                    </select>-->
                                 </div>
                             </div>
                             <div class="filter_box">
                                 <div class="stl_drp">
-                                    <select class="form-control selectpicker" name="alchohol_served" onchange="loadProducts(0);">
-                                        <option value="">Select an Alcohol Served</option>
+                                    <select class="form-control selectpicker" multiple title="Select an Alcohol Served" name="alchohol_served" onchange="loadProducts(0);">
+                                        
                                         <option value="1" >Yes</option>
                                         <option value="2">No</option>
                                         <option value="3">Byob Allowed</option>
@@ -171,8 +171,8 @@
                             </div>
                             <div class="filter_box">
                                 <div class="stl_drp">
-                                    <select class="form-control selectpicker" name="male_service" onchange="loadProducts(0);">
-                                        <option value="">Select a Male Service</option>
+                                    <select class="form-control selectpicker" multiple title="Select a Male Service" name="male_service" onchange="loadProducts(0);">
+                                        
                                         <option value="1">Male Only</option>
                                         <option value="2">Upon Request</option>
                                         <option value="3">Mixed Group Service</option>
@@ -184,8 +184,8 @@
 
                             <div class="filter_box">
                                 <div class="stl_drp">
-                                    <select class="form-control selectpicker" name="female_service" onchange="loadProducts(0);">
-                                        <option value="">Select a Female Service</option>
+                                    <select class="form-control selectpicker" multiple title="Select a Female Service" name="female_service" onchange="loadProducts(0);">
+                                        
                                         <option value="1">Female Only</option>
                                         <option value="2">Upon Request</option>
                                         <option value="3">Mixed Group Service</option>
@@ -196,8 +196,8 @@
                             </div>
                             <div class="filter_box">
                                 <div class="stl_drp">
-                                    <select class="form-control selectpicker" name="gender_segregated" onchange="loadProducts(0);">
-                                        <option value="">Select a Gender Segregated</option>
+                                    <select class="form-control selectpicker" multiple title="Select a Gender Segregated" name="gender_segregated" onchange="loadProducts(0);">
+                                        
                                         <option value="1">Yes</option>
                                         <option value="2">Upon Request</option>
                                         <option value="3">No</option>
@@ -207,8 +207,8 @@
                             </div>
                             <div class="filter_box">
                                 <div class="stl_drp">
-                                    <select class="form-control selectpicker" name="family_area" onchange="loadProducts(0);">
-                                        <option value="">Select a Family Area</option>
+                                    <select class="form-control selectpicker" multiple title="Select a Family Area" name="family_area" onchange="loadProducts(0);">
+                                        
                                         <option value="1">Yes</option>
                                         <option value="2">Upon Request</option>
                                         <option value="3">No</option>

@@ -296,7 +296,7 @@
     liveSearchPlaceholder: null,
     liveSearchNormalize: false,
     liveSearchStyle: 'contains',
-    actionsBox: false,
+    actionsBox: true,
     iconBase: 'glyphicon',
     tickIcon: 'glyphicon-ok',
     maxOptions: false,
@@ -473,6 +473,7 @@
        * @param [tokens]
        * @returns {string}
        */
+      
       var generateA = function (text, classes, inline, tokens) {
         return '<a tabindex="0"' +
             (typeof classes !== 'undefined' ? ' class="' + classes + '"' : '') +

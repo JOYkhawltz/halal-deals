@@ -171,7 +171,7 @@ $categories = ProductType::select('id', 'name')->where('status', '1')->get();
             <div class="row">
                 <div class= "col-sm-8"  style="padding-top:8px">
                     <a class="navi" href="{{ Route('/') }}">Home</a>
-                    <a class="navi" href="{{ Route('about-us') }}">Products</a>
+                    <a class="navi" href="{{ Route('search-coupon') }}">Products</a>
                     <a class="navi" href="{{ Route('how-it-works') }}">How It Works</a>
                     <a class="navi" href="{{ Route('about-us') }}">About</a>
                     <a class="navi" href="{{ Route('terms-condition') }}">Contact Us</a>
@@ -208,7 +208,7 @@ $categories = ProductType::select('id', 'name')->where('status', '1')->get();
                 <div class="col-sm-1" style="padding: 0px; border: solid 1px #f7f7f7;">               
                     <div class="top-drop-btn float-left">
                         <div class="dropdown show">
-                            <a style="color: black;" class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ALL</a>
+                            <a style="color: black;" class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filter</a>
                             <div class="dropdown-menu cst_menu_new" aria-labelledby="dropdownMenuLink">
                                 <form action="{{Route('search-coupon')}}"  method="get">
                                     <div>

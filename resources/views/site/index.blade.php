@@ -46,7 +46,7 @@
             
             
                 <div class="col-sm-6">
-                    <img style="width:450px; height:400px;"src="{{($pages[2]->type==='2' && $pages[2]->content_body!='')?URL::asset('public/uploads/frontend/cms/pictures/'.$pages[2]->content_body):URL::asset('public/frontend/images/juice-png.png')}}" />
+                    <img style="width:400px; height:450px;"src="{{($pages[2]->type==='2' && $pages[2]->content_body!='')?URL::asset('public/uploads/frontend/cms/pictures/'.$pages[2]->content_body):URL::asset('public/frontend/images/roastchicken.jpg')}}" />
                     <img style="position: absolute; top: 20%; left:50% "src="{{($pages[2]->type==='2' && $pages[2]->content_body!='')?URL::asset('public/uploads/frontend/cms/pictures/'.$pages[2]->content_body):URL::asset('public/frontend/images/halal-tag.png')}}" />
 
                 </div>
@@ -187,7 +187,7 @@
                     <div  style="padding: 80px 0px 80px 50px;  text-align:start;">
                             <h1 style="font-size: 18px;font-weight: 200;color:white;">A short message from us</h1>
                             <h1 style="font-size: 30px;font-weight: 600;color:white;">Welcome to</h1>
-                            <img style="width:300px; height:80px;"src="{{($pages[2]->type==='2' && $pages[2]->content_body!='')?URL::asset('public/uploads/frontend/cms/pictures/'.$pages[2]->content_body):URL::asset('public/frontend/images/mail_logo.png')}}" />
+                            <img style="width:300px; height:70px;"src="{{($pages[2]->type==='2' && $pages[2]->content_body!='')?URL::asset('public/uploads/frontend/cms/pictures/'.$pages[2]->content_body):URL::asset('public/frontend/images/mail_logo.png')}}" />
                             <!--<h1 style="font-size: 54px;font-weight: 800;color:green;">Halal Deals</h1>-->
                             <p style="color:white;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                             </p>
