@@ -113,59 +113,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="headingTwo">
-                            <h4 class="panel-title">
-                                <!-- <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" class="collapsed"> -->
-                                <a>
-                                    Details
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseTwo" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
-                            <div class="panel-body">
-                                <h1 class="inner-heading">{{$model->detailed_description}}</h1>
-                                <p>{{$bus_desc->details}}</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="headingThree">
-                            <h4 class="panel-title">
-                                <!-- <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree"> -->
-                                <a>
-                                    Small Prints
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseThree" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
-                            Advert :{{$advert_detail->smallprint}}<br>
-                            Specific times details : {{$advert_detail->spec_times_details}}<br>
-                            New customer only : {{($advert_detail->new_cust_only=="1")?"yes":"no"}}<br>
-                            Product : {{$model->smallprint}}<br>
-                            Business : {{$bus_desc->smallprint}}
-                        </div>
-                    </div>
-                     <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="headingFour">
-                            <h4 class="panel-title">
-                                <!-- <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour" class="collapsed"> -->
-                                <a>
-                                    Embeded Youtube Video
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseFour" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="headingFour" data-parent="#accordion">
-                            <div class="panel-body">
-                                @if(!empty($advert_detail->youtube_url))
-                                <iframe width="420" height="315" src="{{$advert_detail->youtube_url}}">
-                                </iframe>
-                                @else
-                                    No url found
-                                @endif
-                            </div>
-                        </div>
-                    </div>
+
                     <div class="panel-body">
                         <h1 class="inner-heading mrg_btm">Additional Details</h1>
                         <ul class="row">
@@ -254,6 +202,62 @@
                         </ul>
                     </div>
 
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingFour">
+                            <h4 class="panel-title">
+                                <!-- <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour" class="collapsed"> -->
+                                <a>
+                                    Embeded Youtube Video
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseFour" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="headingFour" data-parent="#accordion">
+                            <div class="panel-body">
+                                @if(!empty($advert_detail->youtube_url))
+                                <iframe width="420" height="315" src="{{$advert_detail->youtube_url}}">
+                                </iframe>
+                                @else
+                                    No url found
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingTwo">
+                            <h4 class="panel-title">
+                                <!-- <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" class="collapsed"> -->
+                                <a>
+                                    Details
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
+                            <div class="panel-body">
+                                <h1 class="inner-heading">{{$model->detailed_description}}</h1>
+                                <p>{{$bus_desc->details}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree">
+                            <h4 class="panel-title">
+                                <!-- <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree"> -->
+                                <a>
+                                    Small Prints
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+                            Advert :{{$advert_detail->smallprint}}<br>
+                            Specific times details : {{$advert_detail->spec_times_details}}<br>
+                            New customer only : {{($advert_detail->new_cust_only=="1")?"yes":"no"}}<br>
+                            Product : {{$model->smallprint}}<br>
+                            Business : {{$bus_desc->smallprint}}
+                        </div>
+                    </div>
+                     
+                    
 
                 </div>
             </div>

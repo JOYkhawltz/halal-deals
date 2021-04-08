@@ -11,7 +11,7 @@ $categories = ProductType::select('id', 'name')->where('status', '1')->get();
     <div class="top-bar">
         <div class="container">
             <div class="row">
-                <!--
+                <!--+*
                 <div class="col-sm-4">
                     <div class="top-search">
                         <form action="{{Route('search-coupon')}}" method="get">
@@ -23,7 +23,7 @@ $categories = ProductType::select('id', 'name')->where('status', '1')->get();
                     </div>
                 </div> -->
                 <div class= "col-sm-4" >
-                <p style= "font-size: 18px;  margin-top: 18px;"><i style="font-size:22px; color: darkgreen;"class="icofont-phone"></i>(+1) 234 456 7891</p>
+                <!--<p style= "font-size: 18px;  margin-top: 18px;"><i style="font-size:22px; color: darkgreen;"class="icofont-phone"></i>(+1) 234 456 7891</p>-->
                 </div>
                 <div class="col-sm-4 ">
                     <div style="padding-top:10px;  height:50px; text-align:center;" class="logo-section"><a href="{{ Route('/') }}"><img style = "height:100%;" src="{{ URL::asset('public/frontend/images/mail_logo.png') }}" alt="" /></a></div>
@@ -170,11 +170,11 @@ $categories = ProductType::select('id', 'name')->where('status', '1')->get();
         <div class="container">
             <div class="row">
                 <div class= "col-sm-8"  style="padding-top:8px">
-                    <a class="navi" href="{{ Route('/') }}">Home</a>
-                    <a class="navi" href="{{ Route('search-coupon') }}">Products</a>
-                    <a class="navi" href="{{ Route('how-it-works') }}">How It Works</a>
-                    <a class="navi" href="{{ Route('about-us') }}">About</a>
-                    <a class="navi" href="{{ Route('terms-condition') }}">Contact Us</a>
+                    <a class="navi" href="{{ Route('/') }}">Wellbeing</a>
+                    <a class="navi" href="{{ Route('search-coupon') }}">Hotels</a>
+                    <a class="navi" href="{{ Route('how-it-works') }}">Products</a>
+                    <a class="navi" href="{{ Route('about-us') }}">Restaurants</a>
+                    <a class="navi" href="{{ Route('terms-condition') }}">Other Services</a>
                 </div>
             
                

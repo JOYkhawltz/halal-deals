@@ -5,7 +5,7 @@
 @section('content')
 <section class="main-body-section">
     <div class="">
-       <div class="top-banner" style="display:none;">
+       <div class="top-banner" >
             <div class="owl-carousel banner-slider">
                 <div class="item">
                     <img src="{{($pages[1]->type==='2' && $pages[1]->content_body!='')?URL::asset('public/uploads/frontend/cms/pictures/'.$pages[1]->content_body):URL::asset('public/frontend/images/banner-bg.jpg')}}" />
@@ -30,7 +30,7 @@
             </div>
             @endif
         </div>
-        <div class="justify-content-center" style="height:500px; display:flex; z-index: 9; background-color: #f7f7f7;">
+        <div class="justify-content-center" style="height:500px; display:flex; z-index: 9; background-color: #f7f7f7; display:none;">
             <div class="container" style="display:flex;">
                 <div class="col-sm-6 justify-content-center">
                     <div  style="padding: 80px 0px 80px 50px; max-width:500px; text-align:start;">
@@ -61,8 +61,8 @@
             .category .btn a{ color: black; }
             .category .btn:hover a{color: white;}
         </style>
-        <div class="container" style="margin-top:-50px;">
-        <div class="top-banner row justify-content-center" style="height: 170px; display:flex; z-index: 9;">
+        <div class="container" style="margin-top:-50px; display:none;">
+        <div class="top-banner row justify-content-center" style="height: 170px; display:flex; z-index: 9; ">
             <div class="col-sm-2 category" style="background-color:green;">
                 <h3>Wellbeing</h3>
                 <p style="">To view this category click below</p>
@@ -132,7 +132,52 @@
         @endif
 
         @if(count($deals)>0)
-        <div class="body-box">
+        <div class="body-box" style="background-color: #17c40a33; margin-top: 0px;";>
+            <h2 style="border-bottom: #5e5e5e solid 1px;">HOT OFFERS</h2>
+            <div class="body-box-inner">
+                <div class="owl-carousel offer-slider">
+                    @foreach($hot_deals as $deal)
+                    <div class="item">
+                       @if($deal->other_options_available=='1'&&$deal->new_cust_only=='1')
+                        @if (Auth()->guard('frontend')->guest())
+                        <a href="javascript:;" onclick="showSigninModal();">
+                        @else
+                        <a href="{{Route('advert-details',['id'=>$deal->advert_ID])}}">
+                        @endif
+                        @else
+                        <a href="{{Route('advert-details',['id'=>$deal->advert_ID])}}">
+                        @endif
+                            <div class="offer-box">
+                                <div class="offer-box-top">
+                                    @if(count($deal->product)>0)
+                                    @if(isset($deal->product->defaultPic))
+                                    <img class="img-fluid" src="{{ URL::asset('public/uploads/frontend/product/preview/'.$deal->product->defaultPic->image_name) }}"/>
+                                    @else
+                                    <img class="img-fluid" src="{{ URL::asset('public/frontend/images/product1.png') }}"/>
+                                    @endif
+                                    @endif
+                                </div>
+                                <div class="offer-box-bottom">
+                                    <div>
+                                    <h3>{{str_limit($deal->title,15)}}</h3>
+                                    <h5>{{$deal->business->name}}</h5>
+                                    </div>
+                                    <div>
+                                        <span class="ourprice">Our price<h4><i class="icofont-pound"></i>{{$deal->cost_price}}</h4></span>
+                                        <span class="normalprice">Normal price<h4><i class="icofont-pound"></i>{{$deal->hd_price}}</h4></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+        @endif
+
+        @if(count($deals)>0)
+        <div class="body-box" style="display:none;">
             <h2>Hot Offers</h2>
             <div class="body-box-inner">
                 <div class="row">
@@ -152,7 +197,7 @@
                                     @if(count($deal->product)>0)
                                     @if(isset($deal->product->defaultPic))
                                     <img class="img-fluid" src="{{ URL::asset('public/uploads/frontend/product/preview/'.$deal->product->defaultPic->image_name) }}"/>
-                                    <img style="position: absolute; right:32px; width:30px; height:30px; "src="{{URL::asset('public/frontend/images/halal-tag.png')}}" />
+                                    <!--<img style="position: absolute; right:32px; width:30px; height:30px; "src="{{URL::asset('public/frontend/images/halal-tag.png')}}" />-->
                                     @else
                                     <img class="img-fluid" src="{{ URL::asset('public/frontend/images/product1.png') }}"/>
                                     @endif
@@ -178,7 +223,7 @@
         </div>
 
 
-        <div class="" style="margin-top:100px; ">
+      <!--<div class="" style="margin-top:100px; ">
             <div class="top-banner" style="height: 400px; display:flex; z-index: 9;">
                 <div class="col-sm-4" style="background-color: darkgreen; padding:0px;">
                 <img style="position: center center; width:100%; height:100%;"src="{{($pages[2]->type==='2' && $pages[2]->content_body!='')?URL::asset('public/uploads/frontend/cms/pictures/'.$pages[2]->content_body):URL::asset('public/frontend/images/admin-msg.png')}}">
@@ -188,13 +233,12 @@
                             <h1 style="font-size: 18px;font-weight: 200;color:white;">A short message from us</h1>
                             <h1 style="font-size: 30px;font-weight: 600;color:white;">Welcome to</h1>
                             <img style="width:300px; height:70px;"src="{{($pages[2]->type==='2' && $pages[2]->content_body!='')?URL::asset('public/uploads/frontend/cms/pictures/'.$pages[2]->content_body):URL::asset('public/frontend/images/mail_logo.png')}}" />
-                            <!--<h1 style="font-size: 54px;font-weight: 800;color:green;">Halal Deals</h1>-->
                             <p style="color:white;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                             </p>
                     </div>
                 </div>
             </div>
-        </div>   
+        </div> -->   
 
         <div class="body-box">
             <h2>Halal Deals</h2>

@@ -95,9 +95,9 @@ $text=Cms::where('slug','=','footer_text')->first();
                     <div class="form-group">
                         <div class="frm-btn text-center"><button class="deflt-btn" type="submit">Login to your account</button></div>
                     </div>
-                    <div class="or-txt"><span>or</span></div>
+                    <div class="or-txt"><span>OR</span></div>
                     <div class="social-login">
-                        <h2>Prefer to Login With Social Media</h2>
+                        <h2>Login With</h2>
                         <a href="{{ url('login', ['name' => 'facebook']) }}" class="facebook-log"><i class="icofont-facebook"></i> facebook</a>
                         <a href="{{ url('login', ['name' => 'google']) }}" class="google-log"><i class="icofont-google-plus"></i> Google+</a>
                         <a href="{{ url('login', ['name' => 'outlook']) }}" class="hotmail-log"><i class="icofont-email"></i> Hotmail</a>
@@ -192,7 +192,7 @@ $text=Cms::where('slug','=','footer_text')->first();
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
-                                <label class="container-check"> Please click to accept the <a href="{{route('terms-condition')}}" target="_blank">terms and conditions</a> of being a client of Halal Deals.
+                                <label class="container-check">Tick to agree to our <a href="{{route('terms-condition')}}" target="_blank">terms and conditions</a>
                                     <input type="checkbox" name="terms_and_cond_agreed" checked="checked">
                                     <span class="checkmark"></span>
                                 </label>
@@ -202,7 +202,7 @@ $text=Cms::where('slug','=','footer_text')->first();
                         </div>
                         <div class="col-sm-12">
                             <div class="form-group">
-                                <label class="container-check"> Receive marketing e-mails and messages form <strong>{{ env('APP_NAME', 'Laravel') }}</strong>.
+                                <label class="container-check">Tick to receive personalised marketing emails and messages including special deals from <strong>{{ env('APP_NAME', 'Laravel') }}.co.uk.</strong>
                                     <input type="checkbox" name="marketing_notifications" checked="checked">
                                     <span class="checkmark"></span>
                                 </label>
@@ -214,10 +214,10 @@ $text=Cms::where('slug','=','footer_text')->first();
                     <div class="form-group">
                         <div class="frm-btn text-center"><button class="deflt-btn" type="submit">Register Now</button></div>
                     </div>
-                    <div class="or-txt"><span>or</span></div>
+                    <div class="or-txt"><span>OR</span></div>
                     
                     <div class="social-login">
-                        <h2>Prefer to Signup With Social Media</h2>
+                        <h2>Signup With</h2>
                         <a href="{{ url('login', ['name' => 'facebook']) }}" class="facebook-log"><i class="icofont-facebook"></i> facebook</a>
                         <a href="{{ url('login', ['name' => 'google']) }}" class="google-log"><i class="icofont-google-plus"></i> Google+</a>
                         <a href="{{ url('login', ['name' => 'outlook']) }}" class="hotmail-log"><i class="icofont-email"></i> Hotmail</a>

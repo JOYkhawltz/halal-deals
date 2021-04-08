@@ -108,9 +108,9 @@
     <div class="form-group">
         <div class="frm-btn text-center"><button class="deflt-btn" type="submit">Register Now</button></div>
     </div>
-    <div class="or-txt"><span>or</span></div>
+    <div class="or-txt"><span>OR</span></div>
     <div class="social-login">
-        <h2>Prefer to Signup With Social Media</h2>
+        <h2>Signup With</h2>
         <a href="{{ url('login', ['name' => 'facebook']) }}" class="facebook-log"><i class="icofont-facebook"></i> facebook</a>
         <a href="{{ url('login', ['name' => 'google']) }}" class="google-log"><i class="icofont-google-plus"></i> Google+</a>
         <a href="{{ url('login', ['name' => 'outlook']) }}" class="hotmail-log"><i class="icofont-email"></i> Hotmail</a>

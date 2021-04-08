@@ -203,7 +203,10 @@
                                     <input class="form-control" name="website" type="text"  value="{{$business->website}}">
                                     <span class="help-block"></span> 
                                 </div>
-                            </div> 
+                            </div>
+                        </div>     
+                        <hr>
+                        <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="usr">Halal Certification*</label>
@@ -219,9 +222,7 @@
                                     </select>
                                     <span class="help-block"></span> 
                                 </div>
-                            </div> 
-                        </div>
-                        <div class="row">
+                            </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="usr">Is alcohol served?*</label>
@@ -234,7 +235,9 @@
                                     </select>
                                     <span class="help-block"></span> 
                                 </div>
-                            </div> 
+                            </div>  
+                        </div>
+                        <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="usr">Do you offer a male only service?*</label>
@@ -248,9 +251,7 @@
                                     </select>
                                     <span class="help-block"></span> 
                                 </div>
-                            </div> 
-                        </div> 
-                        <div class="row">
+                            </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="usr">Do you offer a female only service?*</label>
@@ -264,7 +265,10 @@
                                     </select>
                                     <span class="help-block"></span> 
                                 </div>
-                            </div> 
+                            </div>  
+                        </div> 
+                        <div class="row">
+                            
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="usr">Do you have gender segregated areas?*</label>
@@ -278,8 +282,6 @@
                                     <span class="help-block"></span> 
                                 </div>
                             </div> 
-                        </div> 
-                        <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="usr">Do you have areas dedicated for families?*</label>
@@ -294,6 +296,7 @@
                                 </div>
                             </div> 
                         </div> 
+                        <hr>
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="form-group">
@@ -321,6 +324,7 @@
                                 </div>
                             </div> 
                         </div>
+                        <hr>
                         @if(count($product_types)>0)
                         <label>Product Type* :</label>
                         <div class="row cat-menu">
