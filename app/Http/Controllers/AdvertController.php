@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Redirect;
 /* * ***************Requests******************* */
 use App\Http\Requests\AddAdverdealRequest;
 use App\Http\Requests\AddAdvervoucherRequest;
+use App\Http\Requests\EditAdvertRequest;
 /* * ***************Models******************* */
 use App\Advert;
 use App\User;
@@ -285,48 +286,51 @@ public function voucher_details($id) {
         }
     }
 
-//    public function get_edit_advert($id) {
-//        if (Auth()->guard('frontend')->user()->type_id === '3') {
-//            $user = User::findorFail(Auth()->guard('frontend')->user()->id);
-//            $products = Product::select('prod_ID', 'name', 'normal_price')->where('bus_ID', $user->business->bus_ID)->where('status', '1')->get();
-//            $model = Advert::findorFail(base64_decode($id));
-//            return view('advert.edit', compact('model', 'products'));
-//        } else {
-//            abort(404);
-//        }
-//    }
-//
-//    public function post_edit_advert(EditAdvertRequest $request) {
-//        if ($request->ajax()) {
-//            $data = [];
-//            $this->store($request, $request->input('id'));
-//            $notification = [];
-//            $user_id = Auth::guard('frontend')->user()->id;
-//            $business = Business::where('user_id',$user_id )->first();
-////            $notification['from_id'] = $user_id;
-//            $notification['notify_view_users'] = 'business';
-//            $notification['notifiers_id'] = $user_id;
-//            $notification['type'] = '7';
-//            $notification['notify_msg'] = ' Advert  updated successfully ';
-//            $notification['status'] = '0';
-//            Notification::create($notification);
-//            $notification['notify_view_users'] = 'admin';
-//            $notification['notifiers_id'] = '';
-//            $notification['type'] = '7';
-//            $notification['notify_msg'] = 'Advert updated successfully ';
-//            $notification['status'] = '0';
-//            Notification::create($notification);
-//            $notification['notify_view_users'] = 'staff';
-//            $notification['notifiers_id'] = $business->hd_staff_link;
-//            $notification['type'] = '7';
-//            $notification['notify_msg'] = 'Advert updated successfully ';
-//            $notification['status'] = '0';
-//            Notification::create($notification);
-//            $data['msg'] = 'Advert updated successfuly.';
-//            $data['link'] = route('get-advert-list');
-//            return response()->json($data);
-//        }
-//    }
+   public function get_edit_advert($id) {
+       if (Auth()->guard('frontend')->user()->type_id === '3') {
+           $user = User::findorFail(Auth()->guard('frontend')->user()->id);
+           $products = Product::select('prod_ID', 'name', 'normal_price')->where('bus_ID', $user->business->bus_ID)->where('status', '1')->get();
+           $model = Advert::findorFail(base64_decode($id));
+           return view('advert.edit', compact('model', 'products'));
+       } else {
+           abort(404);
+       }
+   }
+
+   public function post_edit_advert(EditAdvertRequest $request) {
+    
+       if ($request->ajax()) {
+           $data = [];
+//           $this->store($request, $request->input('id'));
+           $this->store($request, NULL);
+           $notification = [];
+           $user_id = Auth::guard('frontend')->user()->id;
+           $business = Business::where('user_id',$user_id )->first();
+//            $notification['from_id'] = $user_id;
+           $notification['notify_view_users'] = 'business';
+           $notification['notifiers_id'] = $user_id;
+           $notification['type'] = '7';
+           $notification['notify_msg'] = ' Advert  updated successfully ';
+           $notification['status'] = '0';
+           Notification::create($notification);
+           $notification['notify_view_users'] = 'admin';
+           $notification['notifiers_id'] = '';
+           $notification['type'] = '7';
+           $notification['notify_msg'] = 'Advert updated successfully ';
+           $notification['status'] = '0';
+           Notification::create($notification);
+           $notification['notify_view_users'] = 'staff';
+           $notification['notifiers_id'] = $business->hd_staff_link;
+           $notification['type'] = '7';
+           $notification['notify_msg'] = 'Advert updated successfully ';
+           $notification['status'] = '0';
+           Notification::create($notification);
+           $data['msg'] = 'Advert updated successfuly.';
+           $data['link'] = route('get-advert-deal-list');
+           return response()->json($data);
+       }
+   }
+   
 
     public function delete_advert(Request $request) {
         if ($request->ajax()) {
@@ -350,6 +354,19 @@ public function voucher_details($id) {
         }
     }
 
+    public function store($request){
+        $id = $request->input('id');
+        $input = $request->input();
+        $user_id = Auth()->guard('frontend')->user()->id;
+        $business = Business::select('bus_ID')->where('user_id', $user_id)->first();
+        
+        $product = Product::select('*')->where('prod_ID', $request->input('prod_ID'))->first();
+        Advert::where('advert_ID', $id)->where('prod_ID', $product->prod_ID)->where('bus_ID', $business->bus_ID)->first()->update($input);
+        
+        
+    
+       }
+       
     private function deal_store($request) {
         $input = $request->input();
         // print_r($input);

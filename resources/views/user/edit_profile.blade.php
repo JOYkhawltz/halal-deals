@@ -343,7 +343,7 @@
                                             <input class="main_type" name="prod_types[]" type="checkbox" value="{{$product_type->id}}" {{(in_array($product_type->id,$user_type))?"checked":""}}> {{$product_type->name}}
                                         </label>
                                         @php
-                                        $product_sub_types = \App\ProductSubType::where(['parent_id'=>$product_type->id,'status'=>'1'])->get();
+                                        $product_sub_types = \App\ProductSubType::where(['parent_id'=>$product_type->id,'status'=>'1'])->orderBy('name', 'asc')->get();
                                         $user_subtype=explode(",",$business->prod_sub_types);
                                         @endphp
                                         @if(count($product_sub_types)>0)

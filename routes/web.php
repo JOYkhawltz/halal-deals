@@ -91,8 +91,8 @@ Route::middleware(['web'])->group(function () {
         Route::post('advert-voucheredit-details/{id}', 'AdvertController@post_voucheredit_details')->name('advert-voucheredit-details');
         Route::post('search-voucher','AdvertController@search_voucher')->name('search-voucher');
         Route::get('get-price', 'AdvertController@get_price')->name('get-price');
-//        Route::get('edit-advert/{id}', 'AdvertController@get_edit_advert')->name('edit-advert');
-//        Route::put('edit-advert', 'AdvertController@post_edit_advert')->name('post-edit-advert');
+        Route::get('edit-advert/{id}', 'AdvertController@get_edit_advert')->name('edit-advert');
+        Route::put('edit-advert', 'AdvertController@post_edit_advert')->name('post-edit-advert');
         Route::delete('delete-advert', 'AdvertController@delete_advert')->name('delete-advert');
         Route::get('additonal-discount', 'AdvertController@additonal_discount')->name('additonal-discount');
         /*         * ******************** Cart ************************ */

@@ -17,7 +17,7 @@
                                 <div class="dash-top-grid-box-content">
                                     <div class="dash-top-box-icon"><img src="{{ URL::asset('public/frontend/images/voucher.png') }}" /></div>
                                     <h4>{{$total_deal}}</h4>
-                                    <h5>Total Deals</h5>
+                                    <h5>Live Adverts</h5>
                                 </div>
                             </div>
                         </div>
@@ -27,7 +27,7 @@
                                 <div class="dash-top-grid-box-content">
                                     <div class="dash-top-box-icon"><img src="{{ URL::asset('public/frontend/images/box.png') }}" /></div>
                                     <h4>{{$total_product}}</h4>
-                                    <h5>Total Products</h5>
+                                    <h5>Current products</h5>
                                 </div>
                             </div>
                         </div>
@@ -36,12 +36,12 @@
                                 <div class="dash-top-grid-box-content">
                                     <div class="dash-top-box-icon"><img src="{{ URL::asset('public/frontend/images/voucher-(1).png') }}" /></div>
                                     <h4>{{$total_sold_deal}}</h4>
-                                    <h5>Deals Sold This Month</h5>
+                                    <h5>Vouchers Sold this month</h5>
                                 </div>
                             </div>
                         </div>
 
-                       
+                       <!--
                         <?php
                         $total_gs = 0;
                         foreach ($gross_sales as $gs) {
@@ -59,7 +59,7 @@
                                     <h5>Gross Sales This Month</h5>
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
                         <div class="clearfix"></div>
                     </div>
                     @php

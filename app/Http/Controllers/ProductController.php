@@ -26,7 +26,7 @@ class ProductController extends Controller {
             $error = $this->check_business_details($business_details);
             
             if($error == 1){
-            $request->session()->flash('error', 'You need to fill all the business details in order to add any poducts.');
+            $request->session()->flash('error', 'You need to fill all the business details in order to add any products.');
             return redirect()->route('my-profile');
             }else{
              $products = Product::where('bus_ID', $business_details->bus_ID)->where('status', '<>', '3')->paginate(10);

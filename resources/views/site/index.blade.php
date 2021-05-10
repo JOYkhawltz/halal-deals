@@ -245,7 +245,7 @@
             <div class="body-box-inner">
                 <div class="row">
                     @foreach($deals as $deal)
-                    <div class="col-sm-3">
+                    <div class="col" style="width:20%;">
                         @if($deal->other_options_available=='1'&&$deal->new_cust_only=='1')
                         @if (Auth()->guard('frontend')->guest())
                         <a href="javascript:;" onclick="showSigninModal();">
@@ -346,7 +346,7 @@
     jQuery(document).ready(function ($) {
         var owl2 = $('.offer-slider');
         owl2.owlCarousel({
-//            items: 4,
+           items: 4,
             loop: false,
             responsiveClass: true,
             nav: true,
@@ -370,7 +370,7 @@
                     items: 2
                 },
                 1000: {
-                    items: 3
+                    items: 4
                 }
             }
         });

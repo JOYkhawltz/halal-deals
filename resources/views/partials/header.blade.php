@@ -170,11 +170,11 @@ $categories = ProductType::select('id', 'name')->where('status', '1')->get();
         <div class="container">
             <div class="row">
                 <div class= "col-sm-8"  style="padding-top:8px">
-                    <a class="navi" href="{{ Route('/') }}">Wellbeing</a>
-                    <a class="navi" href="{{ Route('search-coupon') }}">Hotels</a>
-                    <a class="navi" href="{{ Route('how-it-works') }}">Products</a>
-                    <a class="navi" href="{{ Route('about-us') }}">Restaurants</a>
-                    <a class="navi" href="{{ Route('terms-condition') }}">Other Services</a>
+                    <a class="navi" href="{{ URL::asset('search-coupon?category%5B%5D=1')}}">Wellbeing</a>
+                    <a class="navi" href="{{ URL::asset('search-coupon?category%5B%5D=2')}}">Hotels</a>
+                    <a class="navi" href="{{ URL::asset('search-coupon?category%5B%5D=3')}}">Products</a>
+                    <a class="navi" href="{{ URL::asset('search-coupon?category%5B%5D=4')}}">Restaurants</a>
+                    <a class="navi" href="{{ URL::asset('search-coupon?category%5B%5D=5')}}">Other Services</a>
                 </div>
             
                
