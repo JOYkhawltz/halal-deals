@@ -12,7 +12,7 @@ $user=App\User::where('id','=',$voucher->purchasing_user)->first();
         <span class="badge badge-warning">Not redeem</span>
         @endif
     </td>
-    <td>{{$user->first_name.' '.$user->last_name}}</td>                                    
+    <td>{{$user->first_name.' '.$user->last_name}}</td>
     <td>
         @if($voucher->status==='0')
         <span class="badge badge-warning">Pending</span>

@@ -43,8 +43,13 @@ class AddAdverdealRequest extends FormRequest {
                     $validator->errors()->add('date_start', 'Please give a start Date.');
                 } 
 
-            }
+            }/*
             if(!preg_match("/^(https|http):\/\/(?:www\.)?youtube.com\/embed\/[A-z0-9]/", $this->youtube_url))
+            {
+                $validator->errors()->add('youtube_url', 'Enter a valid url.');
+            }*/
+            
+            if(!preg_match("/^(https|http):\/\/(?:www\.)?youtube.com\/watch\?v\=[A-z0-9]/", $this->youtube_url))
             {
                 $validator->errors()->add('youtube_url', 'Enter a valid url.');
             }

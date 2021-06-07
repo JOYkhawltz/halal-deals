@@ -146,7 +146,7 @@
                         <div class="row" >
                             <div class="col-sm-6">
                                 <div class="form-group has-error">
-                                    <label for="usr">Coupen Discount(%)</label>
+                                    <label for="usr">Coupon Discount(%)</label>
                                     <input class="form-control" id="coupen_discount" name="coupen_discount" type="text" value="{{$model->commission_rate}}" onkeyup="discountcoupen(this);">
 
                                     <span class="help-block" id="help-block_err_coupen"></span>

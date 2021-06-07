@@ -591,7 +591,7 @@ function discountcoupen(obj) {
 //    $("#output_price").addClass('d-none');
     $('#help-block_err_coupen').html('');
     if ($("#coupen_discount").val() == '') {
-        $('#help-block_err_coupen').text('This coupen discount field is required.').closest('.form-group').addClass('has-error');
+        $('#help-block_err_coupen').text('This coupon discount field is required.').closest('.form-group').addClass('has-error');
         $("#output_price").addClass('hide');
     } else {
 

@@ -293,7 +293,7 @@ class UserController extends Controller {
                 $label[] = date('F,Y', strtotime(date("d-m-" . $year) . " -$j months"));
 //                print_r($label);exit;
                 $total_gs = 0;
-                $gross_sales = OrderDetails::where('bus_ID', $bus_ID->bus_ID)->where('status', '3')->whereMonth('created_at', '=', $month)->whereYear('created_at', $yr)->get();
+                $gross_sales = OrderDetails::where('bus_ID', $bus_ID->bus_ID)->where('status', '2')->whereMonth('created_at', '=', $month)->whereYear('created_at', $yr)->get();
                 foreach ($gross_sales as $gs) {
                     if ($gs->type == 'deal') {
                         $advert = Advert::where('advert_ID', $gs->advert_id)->first();

@@ -57,7 +57,9 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td class="text-center">{{$cart->quantity}}</td>
+                                <!--<td class="text-center">{{$cart->quantity}}</td>-->
+                                <td class="text-center"><input type="number" id="quantity" name="quantity" value="{{$cart->quantity}}"></td>
+                                
                                 <td data-th="Subtotal nw_txt_bold" class="text-center"><i class="fa fa-gbp" aria-hidden="true"></i>{{number_format((($cart->item_price)*$cart->quantity),2)}}</td>
 
                             </tr>

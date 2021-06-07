@@ -359,18 +359,16 @@ public function voucher_details($id) {
         $input = $request->input();
         $user_id = Auth()->guard('frontend')->user()->id;
         $business = Business::select('bus_ID')->where('user_id', $user_id)->first();
-        
         $product = Product::select('*')->where('prod_ID', $request->input('prod_ID'))->first();
-        Advert::where('advert_ID', $id)->where('prod_ID', $product->prod_ID)->where('bus_ID', $business->bus_ID)->first()->update($input);
-        
-        
-    
+        Advert::where('advert_ID', $id)->where('prod_ID', $product->prod_ID)->where('bus_ID', $business->bus_ID)->first()->update($input); 
        }
        
     private function deal_store($request) {
         $input = $request->input();
         // print_r($input);
         // exit();
+        $yt = $request->input("youtube_url");
+        $input['youtube_url'] = str_replace("watch?v=","embed/", $yt);
         $postage=$request->input("postage_allow");
         $hot_offer=$request->input("hot_offer");
         if(isset($postage)){

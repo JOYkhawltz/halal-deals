@@ -52,8 +52,8 @@ if (count($model) > 0):
                                     <h5>{{$val->name}}</h5>
                                     </div>
                                     <div>
-                                        <span class="ourprice">Our price<h4><i class="icofont-euro"></i>{{$val->cost_price}}</h4></span>
-                                        <span class="normalprice">Normal price<h4><i class="icofont-euro"></i>{{$val->hd_price}}</h4></span>
+                                        <span class="ourprice">Our price<h4><i class="icofont-pound"></i>{{$val->cost_price}}</h4></span>
+                                        <span class="normalprice">Normal price<h4><i class="icofont-pound"></i>{{$val->hd_price}}</h4></span>
                                     </div>
                                 </div>
                             </div>

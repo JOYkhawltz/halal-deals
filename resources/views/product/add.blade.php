@@ -110,7 +110,7 @@
                             </div> 
                         </div>
                         
-                        <div class="row">
+                       <!-- <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="usr">Discount (in %)</label>
@@ -125,7 +125,7 @@
                             </div> 
                             <div class="col-sm-6" id="dicount_price">
                             </div> 
-                        </div>
+                        </div>-->
 
                         <div class="row">
                             <div class="col-sm-6">

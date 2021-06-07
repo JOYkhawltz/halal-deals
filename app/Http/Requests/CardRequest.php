@@ -38,7 +38,7 @@ class CardRequest extends FormRequest {
             }
             $expiry = explode("/", $this->expiry);
             if (isset($expiry[1]) && strlen(trim($expiry[1])) !== 4) {
-                $validator->errors()->add('expiry', 'Please give a prorper expiry details.');
+                $validator->errors()->add('expiry', 'Invalid expiry date.');
             }
             if($this->card_type=="")
             {

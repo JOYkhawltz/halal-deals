@@ -126,8 +126,8 @@ class CartController extends Controller {
                 if (count($products) === 0) {
                     $data['content'] = view('cart.notfound')->render();
                 }
-                $data['total'] = "$" . number_format($total, 2);
-                $data['sub_total'] = "$" . number_format($sub_total, 2);
+                $data['total'] = "£" . number_format($total, 2);
+                $data['sub_total'] = "£" . number_format($sub_total, 2);
                 $data['msg'] = "Successfully removed from cart.";
                 $data['type'] = 1;
             } else {

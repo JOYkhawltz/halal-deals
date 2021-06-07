@@ -17,7 +17,7 @@
                                 <div class="dash-top-grid-box-content">
                                     <div class="dash-top-box-icon"><img src="{{ URL::asset('public/frontend/images/voucher.png') }}" /></div>
                                     <h4>{{$total_deal}}</h4>
-                                    <h5>Live Adverts</h5>
+                                    <a href="{{Route('get-advert-deal-list')}}"><h5>Live Adverts</h5></a>
                                 </div>
                             </div>
                         </div>
@@ -27,7 +27,7 @@
                                 <div class="dash-top-grid-box-content">
                                     <div class="dash-top-box-icon"><img src="{{ URL::asset('public/frontend/images/box.png') }}" /></div>
                                     <h4>{{$total_product}}</h4>
-                                    <h5>Current products</h5>
+                                    <a href="{{Route('get-product-list')}}"><h5>Current products</h5></a>
                                 </div>
                             </div>
                         </div>
@@ -42,15 +42,7 @@
                         </div>
 
                        <!--
-                        <?php
-                        $total_gs = 0;
-                        foreach ($gross_sales as $gs) {
-                            if ($gs->type == 'deal') {
-                                $advert = App\Advert::where('advert_ID', $gs->advert_id)->first();
-                                $total_gs = $total_gs + ($gs->quantity *$advert->cost_price);
-                            } 
-                        }
-                        ?>
+                        
                         <div class="col-md-3 col-sm-6">
                             <div class="dash-top-grid-box">
                                 <div class="dash-top-grid-box-content">
@@ -60,6 +52,15 @@
                                 </div>
                             </div>
                         </div>-->
+                        <?php
+                        $total_gs = 0;
+                        foreach ($gross_sales as $gs) {
+                            if ($gs->type == 'deal') {
+                                $advert = App\Advert::where('advert_ID', $gs->advert_id)->first();
+                                $total_gs = $total_gs + ($gs->quantity *$advert->cost_price);
+                            } 
+                        }
+                        ?>
                         <div class="clearfix"></div>
                     </div>
                     @php
@@ -87,7 +88,7 @@
                         <div class="col-md-6 col-sm-6">
                             <div class="chart-box">
                                 <div class="chart-title">
-                                    <h4>Total Profit Per Month</h4>
+                                    <h4>Sales in Pounds</h4>
                                 </div>
                               <select name="year" onchange="profitpermonth(this);">
                                     @forelse($years as $year)
