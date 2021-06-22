@@ -212,6 +212,16 @@ class ProductController extends Controller {
 
     public static function save_product_images($request, $product_id) {
         if (!empty($request->input('AllImages')['image']) && !empty($product_id)) {
+            $productImages = ProductImage::where(['prod_ID' => $product_id])->where('status', '1')->get();
+            if (count($productImages) > 0) {
+                foreach ($productImages as $img) {
+                    if (file_exists(public_path('uploads/frontend/product/preview/' . $img->image_name))) {
+                        $file1 = public_path('uploads/frontend/product/preview/' . $img->image_name);
+                        unlink($file1);
+                    }
+                    $img->delete();
+                }
+            }
             $count = 0;
             foreach ($request->input('AllImages')['image'] AS $image) {
                 $model_image = new ProductImage();

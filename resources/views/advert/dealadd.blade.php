@@ -120,15 +120,15 @@
                         <div class="row d-none" id="additonalspctime">
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label for="usr">Date Start</label>
-                                    <input class="form-control datepickertime" name="date_start" type="text" readonly="true">
+                                    <label for="usr">Days</label>
+                                    <input class="form-control" name="date_start" type="text" >
                                     <span class="help-block"></span> 
                                 </div>
                             </div> 
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label for="usr">Date Finish</label>
-                                    <input class="form-control datepickertime" name="date_finish" type="text" readonly="true">
+                                    <label for="usr">Times</label>
+                                    <input class="form-control" name="date_finish" type="text" >
                                     <span class="help-block"></span> 
                                 </div>
                             </div>

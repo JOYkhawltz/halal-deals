@@ -2,6 +2,7 @@
 
 @section('content') 
 @section('css')
+<link rel="stylesheet" href="{{URL::asset('public/frontend/custom/datetimepicker/css/bootstrap-datetimepicker.min.css')}}">
 <style type="text/css">
     #payment-form{
         display: none;
@@ -20,6 +21,7 @@
     }
 </style>
 @stop  
+
 <div class="how_it_works padding-50">
     <section class="checkout_main">
 
@@ -153,7 +155,7 @@
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label for="usr">Expiry Date (MM/YYYY)</label>
-                                                <input type="text" class="form-control" name="expiry" placeholder="MM/YYYY" id="expiry_date">
+                                                <input type="text" class="form-control datepicker" name="expiry" placeholder="MM/YYYY"  readonly="true">
                                                 <span class="help-block"></span>
                                             </div>
                                         </div>
@@ -234,7 +236,7 @@
 @endsection
 
 @section('js')
-
+<script src="{{URL::asset('public/frontend/custom/datetimepicker/js/bootstrap-datetimepicker.min.js')}}"></script>
 <script>
     $(document).ready(function () {
         $("#card_number").on('keyup', function () {
@@ -244,7 +246,15 @@
         $('#expiry_date').mask('99/9999');
         $('#cvc').mask('999');
         $('#card_number').mask('9999 9999 9999 9999');
+        $('.datepicker').datetimepicker({
+                                                format: "mm-yyyy",
+                                                autoclose: true,
+                                                todayBtn: true,
+                                                startDate: new Date(),
+                                                minView: 2
+                                            });
     });
+    
     $(document).ready(function () {
         $(".cust-scroll-table").niceScroll({touchbehavior: false, cursorcolor: "#2e4f7b", cursoropacitymax: 0.7, cursorwidth: 5, background: "#cccccc", cursorborder: "none", cursorborderradius: "5px", autohidemode: false});
         $(window).scroll(function () {

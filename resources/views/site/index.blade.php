@@ -4,7 +4,7 @@
 @stop
 @section('content')
 <section class="main-body-section">
-    <div class="">
+    <div class="container">
        <div class="top-banner" >
             <div class="owl-carousel banner-slider">
                 <div class="item">
@@ -177,9 +177,9 @@
         @endif
 
         @if(count($deals)>0)
-        <div class="body-box" style="display:none;">
+        <div class="body-box" style="">
             <h2>Hot Offers</h2>
-            <div class="body-box-inner">
+            <div class="container">
                 <div class="row">
                     @foreach($hot_deals as $deal)
                     <div class="col-sm-3">
@@ -245,7 +245,7 @@
             <div class="body-box-inner">
                 <div class="row">
                     @foreach($deals as $deal)
-                    <div class="col" style="width:20%;">
+                    <div class="col-sm-3" style="">
                         @if($deal->other_options_available=='1'&&$deal->new_cust_only=='1')
                         @if (Auth()->guard('frontend')->guest())
                         <a href="javascript:;" onclick="showSigninModal();">
