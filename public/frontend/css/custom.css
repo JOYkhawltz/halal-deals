@@ -28,7 +28,7 @@ body{ background:#ffffff; margin:0px; padding:0px !important; font-size: 14px; l
 .nav-bar ul li a{ color: grey; display: inline-block; font-size: 12px;} 
 .navbar-toggle { float: right; width: 25px; position: relative; padding: 0px; background-color: transparent; background-image: none; border: 1px solid transparent; border-radius: 4px;}
 .navbar-header{ position: relative; display: none;}
-.navbar-header .navbar-toggle{ color: #fff; padding-top: 10px; font-size: 30px;}
+.navbar-header .navbar-toggle{ color:green; padding-top: 10px; font-size: 30px;}
 .navbar-header .navbar-toggle:focus{ outline: none;}
 .navbar-collapse{ display: block;}
 .nav-bar ul li.cart-menu{}
