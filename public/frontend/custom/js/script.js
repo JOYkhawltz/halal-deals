@@ -801,6 +801,52 @@ function GetCardType(number)
     return "";
 }
 
+function CartUpdate(value, obj) {
+
+    ajaxindicatorstart();
+                    var csrf_token = $('input[name=_token]').val();
+                    var advert_type = $(obj).data('advert_type');
+                    var advert_id = $(obj).data('advert_id');
+                    var cart_quantity = value;
+
+                    var q =document.getElementById("quanti");
+                    var result = (cart_quantity - Math.floor(cart_quantity)) !== 0;
+                    
+                   if(cart_quantity < 1 || result ){ 
+                       cart_quantity=1;
+                   }
+                    
+                    currentRequest = $.ajax({
+                        type: 'POST',
+                        headers: {'X-CSRF-TOKEN': csrf_token},
+                        url: full_path + 'cart-update',
+                        dataType: 'json',
+                        data: {advert_id: advert_id , advert_type: advert_type, cart_quantity: cart_quantity},
+                        beforeSend: function () {
+                            if (currentRequest !== null) {
+                                currentRequest.abort();
+                            }
+                        },
+                        success: function (resp) {
+                            if (resp.type === 1) {
+                               // $(obj).closest('tr').remove();
+                               q.value=cart_quantity;
+                               
+                               $('#quanti').html(resp.cart_quantity);
+                               $('#cart_count').html(resp.cart_count);
+                               $('#total_price').html(resp.total);
+                               $('#sub_total_price').html(resp.sub_total);
+                                
+                                success_msg(resp.msg);
+                            } else {
+                                error_msg(resp.msg);
+                            }
+                            ajaxindicatorstop();
+                        }
+                    });
+
+}
+
 function AddtoCart(obj) {
     ajaxindicatorstart();
     var advert_id = $(obj).data('advert_id');

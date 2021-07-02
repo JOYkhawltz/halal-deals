@@ -12,7 +12,7 @@
                                 <th style="width:10%; text-align: center;">Remove</th>
                                 <th style="width:40%">Advert </th>
                                 <th style="width:10%; text-align: center;">quantity </th>
-                                <th style="width:22%" class="text-center">Total</th>
+                                <th style="width:22%" class="text-center">Item Price</th>
 
                             </tr>
                         </thead>
@@ -58,9 +58,12 @@
                                     </div>
                                 </td>
                                 <!--<td class="text-center">{{$cart->quantity}}</td>-->
-                                <td class="text-center"><input type="number" id="quantity" name="quantity" value="{{$cart->quantity}}"></td>
+                                <td class="text-center">
                                 
-                                <td data-th="Subtotal nw_txt_bold" class="text-center"><i class="fa fa-gbp" aria-hidden="true"></i>{{number_format((($cart->item_price)*$cart->quantity),2)}}</td>
+                                <input  type="number" id="quanti" min=1 onchange="CartUpdate(value ,this);" data-advert_type="deal" data-advert_id="{{$cart->advert_ID}}" name="quantity" value="{{$cart->quantity}}"   > </td> 
+                                
+                                <!--<td data-th="Subtotal nw_txt_bold" class="text-center"><i class="fa fa-gbp" aria-hidden="true"></i>{{number_format((($cart->item_price)*$cart->quantity),2)}}</td>-->
+                                <td data-th="Subtotal nw_txt_bold" class="text-center"><i class="fa fa-gbp" aria-hidden="true"></i>{{$cart->item_price}}</td>
 
                             </tr>
                             @empty

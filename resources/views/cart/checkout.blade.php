@@ -155,7 +155,7 @@
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label for="usr">Expiry Date (MM/YYYY)</label>
-                                                <input type="text" class="form-control datepicker" name="expiry" placeholder="MM/YYYY"  readonly="true">
+                                                <input type="month" class="form-control" name="expiry" placeholder="MM/YYYY"  >
                                                 <span class="help-block"></span>
                                             </div>
                                         </div>

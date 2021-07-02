@@ -9,7 +9,7 @@ if (count($model) > 0):
         }
         if ($key < $limit) {
             ?>
-            <div class="col-md-4">
+            <div class="col-sm-6 col-md-6 col-lg-3">
 <!--                <div class="offer-box">
                     <div class="media">
                         <div class="media-body">

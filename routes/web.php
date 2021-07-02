@@ -27,6 +27,7 @@ Route::middleware(['web'])->group(function () {
 
     Route::get('cart', ['uses' => 'CartController@index', 'as' => 'cart']);
     Route::post('add-cart', ['uses' => 'CartController@add_to_cart', 'as' => 'add-cart']);
+    Route::post('cart-update', ['uses' => 'CartController@cart_update', 'as' => 'cart-update']);
     Route::post('remove-cart', ['uses' => 'CartController@remove_from_cart', 'as' => 'remove-cart']);
 
     /*     * ***********************Search Controller***************************** */

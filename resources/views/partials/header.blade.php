@@ -7,7 +7,7 @@ $offset = 0;
 $title = (isset($_GET['title'])) ? $_GET['title'] : NULL;
 $categories = ProductType::select('id', 'name')->where('status', '1')->get();
 ?>
-<section class="header-section" style="height:150px;">
+<section class="header-section">
     <div class="top-bar">
         <div class="container">
             <div class="row">
@@ -22,10 +22,10 @@ $categories = ProductType::select('id', 'name')->where('status', '1')->get();
                         </form>
                     </div>
                 </div> -->
-                <div class= "col-sm-4" >
+                <div class= "col-sm-0 col-md-2 col-lg-3" >
                 <!--<p style= "font-size: 18px;  margin-top: 18px;"><i style="font-size:22px; color: darkgreen;"class="icofont-phone"></i>(+1) 234 456 7891</p>-->
                 </div>
-                <div class="col-sm-4 ">
+                <div class="col-sm-6 col-md-3 col-lg-4 " style="width:50%">
                     <div style="padding-top:10px;  height:50px; text-align:center;" class="logo-section"><a href="{{ Route('/') }}"><img style = "height:100%;" src="{{ URL::asset('public/frontend/images/mail_logo.png') }}" alt="" /></a></div>
                 </div>
                 <!--                <div class="col -sm-2 col-6">
@@ -105,7 +105,7 @@ $categories = ProductType::select('id', 'name')->where('status', '1')->get();
                     </div>
                 </div>-->
 
-                <div class="col-sm-4 col-6">
+                <div class="col-sm-6 col-md-7 col-lg-5" style="width:50%" >
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                             <i class="icofont-navigation-menu"></i>                       
@@ -169,7 +169,7 @@ $categories = ProductType::select('id', 'name')->where('status', '1')->get();
     <div class="top-bar" >
         <div class="container">
             <div class="row">
-                <div class= "col-sm-8"  style="padding-top:8px">
+                <div class= " col-md-9 col-lg-7 "  style="  padding-top:8px; ">
                     <a class="navi" href="{{ URL::asset('search-coupon?category%5B%5D=1')}}">Wellbeing</a>
                     <a class="navi" href="{{ URL::asset('search-coupon?category%5B%5D=2')}}">Hotels</a>
                     <a class="navi" href="{{ URL::asset('search-coupon?category%5B%5D=3')}}">Products</a>
@@ -205,7 +205,7 @@ $categories = ProductType::select('id', 'name')->where('status', '1')->get();
                                         </div>
                                     </div> -->
 
-                <div class="col-sm-1" style="padding: 0px; border: solid 1px #f7f7f7;">               
+                <div class=" col-md-1 col-lg-1" style="width: 30%; padding: 0px; border: solid 1px #f7f7f7;">               
                     <div class="top-drop-btn float-left">
                         <div class="dropdown show">
                             <a style="color: black;" class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filter</a>
@@ -255,7 +255,7 @@ $categories = ProductType::select('id', 'name')->where('status', '1')->get();
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-3" style="padding: 0px; border: solid 1px #f7f7f7;">
+                <div class=" col-md-2 col-lg-4" style="width:70%; padding: 0px; border: solid 1px #f7f7f7;">
                     <div class="top-search">
                         <form action="{{Route('search-coupon')}}" method="get">
                             <div class="search-wrap">

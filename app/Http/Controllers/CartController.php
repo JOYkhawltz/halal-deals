@@ -55,6 +55,71 @@ class CartController extends Controller {
             }
         }
     }
+    public function cart_update(Request $request){
+
+        if ($request->ajax()) {
+            $data = [];
+            $input = [];
+            $advert_id = $request->input('advert_id');
+            $advert_type = $request->input('advert_type');
+            $quantity = $request->input('cart_quantity');
+            // if($quantity < 1 && ==){ 
+            //     $quantity=1;
+
+            //  }
+            $model = Advert::findorFail($advert_id);
+            if (Auth()->guard('frontend')->guest()) {
+                $user_id = $this->rand_string(10);
+                if (Cookie::has('guest_user_halaldeals')) {
+                    $user_id = Cookie::get('guest_user_halaldeals');
+                } else {
+                    Cookie::queue(Cookie::make('guest_user_halaldeals', $user_id, (86400 * 30), '/'));
+                }
+            } else {
+                $user_id = Auth()->guard('frontend')->user()->id;
+            }
+            $checkProduct = Cart::where('user_id', $user_id)->where('advert_ID', $advert_id)->where('status', '1')->first();
+            if ($advert_type == 'deal') {
+                if (count($checkProduct) > 0) {
+                    //$input['quantity'] = $checkProduct->quantity;
+                    $input['quantity'] =  $quantity;
+                    $checkProduct->update($input);
+                        $products = Cart::where('user_id', $user_id)->where('status', '1')->get();
+                        $total = 0;
+                        $sub_total = 0;
+                        foreach ($products as $product) {
+                            $total += (($product->quantity * $product->item_price));
+                            $sub_total += ($product->quantity * $product->item_price);
+                        }
+                        
+                        $data['total'] = "£" . number_format($total, 2);
+                        $data['sub_total'] = "£" . number_format($sub_total, 2);
+                    $data['type'] = 1;
+                    $data['cart_count'] = Cart::where('user_id', $user_id)->whereStatus('1')->count();
+                    $data['msg'] = "cart updated successfully.";
+                    
+                } else {
+                    $input['user_id'] = $user_id;
+                    $input['advert_ID'] = $advert_id;
+                    $input['item_price'] = ($model->hd_price !== NULL) ? $model->hd_price : 0;
+                    $input['status'] = '1';
+                    $input['quantity'] = $quantity;
+                    $input['type'] = 'deal';
+                    Cart::create($input);
+                    $data['type'] = 1;
+                    $data['cart_count'] = Cart::where('user_id', $user_id)->whereStatus('1')->count();
+                    $data['msg'] = "Successfully added to the cart.";
+                }
+            } 
+
+            return response()->json($data);
+        }
+        
+
+       
+
+        
+    }
 
     public function add_to_cart(Request $request) {
         if ($request->ajax()) {

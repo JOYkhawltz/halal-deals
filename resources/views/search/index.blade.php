@@ -7,7 +7,7 @@
     <div class="product_list">
         <div class="container">
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-sm-4 col-md-3">
                     <form action="{{Route('post-coupon-search')}}" id="filterCouponForm">
                         @csrf
                         <input type="hidden" id="limit" name="limit" value="{{ $limit }}">
@@ -220,7 +220,7 @@
                         <input type="hidden" name="sortby">
                     </form>
                 </div>
-                <div class="col-md-9">
+                <div class="col-sm-8 col-md-9">
                     <div class="right_part">
                         <div class="top_part d-flex justify-content-between align-items-center">
                             <h1>DEALS OFFERS</h1>

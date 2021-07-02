@@ -179,10 +179,10 @@
         @if(count($deals)>0)
         <div class="body-box" style="">
             <h2>Hot Offers</h2>
-            <div class="container">
+            <div class="">
                 <div class="row">
                     @foreach($hot_deals as $deal)
-                    <div class="col-sm-3">
+                    <div class="col-sm-6 col-md-4 col-lg-3 ">
                         @if($deal->other_options_available=='1'&&$deal->new_cust_only=='1')
                         @if (Auth()->guard('frontend')->guest())
                         <a href="javascript:;" onclick="showSigninModal();">
@@ -245,7 +245,7 @@
             <div class="body-box-inner">
                 <div class="row">
                     @foreach($deals as $deal)
-                    <div class="col-sm-3" style="">
+                    <div class="col-sm-6 col-md-4 col-lg-3" style="">
                         @if($deal->other_options_available=='1'&&$deal->new_cust_only=='1')
                         @if (Auth()->guard('frontend')->guest())
                         <a href="javascript:;" onclick="showSigninModal();">
@@ -267,7 +267,7 @@
                                 </div>
                                 <div class="offer-box-bottom">
                                     <div>
-                                    <h3 style="width:1px ! important">{{str_limit($deal->title,15)}}</h3>
+                                    <h3>{{str_limit($deal->title,15)}}</h3>
                                     <h5>{{$deal->business->name}}</h5>
                                     </div>
                                     <div>
