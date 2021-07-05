@@ -2,9 +2,10 @@
     <ul>
         <li class="{{Route::is('dashboard') ? 'active' : '' }}"><a href="{{ Route('dashboard') }}"><i class="icofont-rocket"></i>Dashboard</a></li>
         @if (Auth::guard('frontend')->user()->type_id === '3')
+        <li class="{{(in_array(\Request::route()->getName(),['get-product-list','edit-product','add-product']))?'active':''}}"><a href="{{Route('get-product-list')}}"><i class="icofont-box"></i>Products</a></li>
         <li class="{{(in_array(\Request::route()->getName(),['get-advert-deal-list','add-advert-deal']))?'active':''}}"><a href="{{Route('get-advert-deal-list')}}"><i class="icofont-ticket"></i>Adverts</a></li>
         <li class="{{(in_array(\Request::route()->getName(),['get-advert-voucher-list','add-advert-voucher','advert-voucher-details','advert-voucheredit-details']))?'active':''}}"><a href="{{Route('get-advert-voucher-list')}}"><i class="icofont-ticket"></i>Vouchers</a></li>
-        <li class="{{(in_array(\Request::route()->getName(),['get-product-list','edit-product','add-product']))?'active':''}}"><a href="{{Route('get-product-list')}}"><i class="icofont-box"></i>Products</a></li>
+        
         @endif
         <li class="{{Route::is('my-profile') ? 'active' : '' }}"><a href="{{Route('my-profile')}}"><i class="icofont-ui-user"></i>My Account</a></li>        
         @php

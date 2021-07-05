@@ -35,8 +35,9 @@
                             <div class="dash-top-grid-box">
                                 <div class="dash-top-grid-box-content">
                                     <div class="dash-top-box-icon"><img src="{{ URL::asset('public/frontend/images/voucher-(1).png') }}" /></div>
-                                    <h4>{{$total_sold_deal}}</h4>
-                                    <h5>Vouchers Sold this month</h5>
+                                    <!-- <h4>{{$total_sold_deal}}</h4> -->
+                                    <h4>{{$total_voucher}}</h4>
+                                    <a href="{{Route('get-advert-voucher-list')}}"><h5>Vouchers Sold this month</h5></a>
                                 </div>
                             </div>
                         </div>

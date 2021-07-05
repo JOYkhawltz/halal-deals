@@ -22,7 +22,7 @@ use App\Advert;
 use App\Notification;
 use App\OrderDetails;
 use App\Country;
-
+use App\VoucherDetail;
 class UserController extends Controller {
 
     public function get_dashboard() {
@@ -30,7 +30,9 @@ class UserController extends Controller {
         if (Auth::guard('frontend')->user()->type_id === '3') {
             $bus_ID = Business::select('bus_ID')->where('user_id', auth()->guard('frontend')->user()->id)->first();
             $data['total_product'] = Product::where('bus_ID', $bus_ID->bus_ID)->where('status', '<>', '3')->count();
-            $data['total_deal'] = Advert::where('bus_ID', $bus_ID->bus_ID)->where('advert_type', '=', 'deal')->where('status', '<>', '3')->count();
+            $data['total_deal'] = Advert::where('bus_ID', $bus_ID->bus_ID)->where('advert_type', '=', 'deal')->where('status', '<>', '3')->whereMonth('deal_end', '>=', date('m'))->whereYear('deal_end', '>=', date('Y'))->count();
+            $data['total_voucher'] = VoucherDetail::where('bus_ID', $bus_ID->bus_ID)->where('redeem','2')->count();
+            //$data['total_voucher'] =VoucherDetail::where('status', '1')->where('redeem','2')->where('bus_ID',$bus_id->bus_ID)->count();
 //            $data['total_voucher'] = Advert::where('bus_ID', $bus_ID->bus_ID)->where('advert_type', '=', 'voucher')->where('status', '<>', '3')->count();
 //            $data['total_sold_voucher'] = OrderDetails::where('bus_ID', $bus_ID->bus_ID)->where('type', 'voucher')->where('status', '3')->whereMonth('created_at', '=', date('m'))->whereYear('created_at', date('Y'))->sum('quantity');
             $data['total_sold_deal'] = OrderDetails::where('bus_ID', $bus_ID->bus_ID)->where('type', 'deal')->where('status', '3')->whereMonth('created_at', '=', date('m'))->whereYear('created_at', date('Y'))->sum('quantity');
