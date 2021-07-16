@@ -61,7 +61,7 @@
                                     <td>
                                     <a href="{{Route('edit-advert',['id'=>base64_encode($advert->advert_ID)])}}" class="edit"><i class="icofont-edit"></i></a>
                                         <a href="{{Route('advert-details',['id'=>($advert->advert_ID)])}}" class="view"><i class="icofont-eye-alt"></i></a>
-                                        <!--<a href="javascript:void(0);" class="delete delete-advert" data-id="{{$advert->advert_ID}}"><i class="icofont-ui-delete"></i></a>-->
+                                        <a href="javascript:void(0);" class="delete delete-advert" data-id="{{$advert->advert_ID}}"><i class="icofont-ui-delete"></i></a>
                                     </td>
                                 </tr>
                                 @empty

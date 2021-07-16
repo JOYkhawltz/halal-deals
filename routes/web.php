@@ -96,6 +96,9 @@ Route::middleware(['web'])->group(function () {
         Route::put('edit-advert', 'AdvertController@post_edit_advert')->name('post-edit-advert');
         Route::delete('delete-advert', 'AdvertController@delete_advert')->name('delete-advert');
         Route::get('additonal-discount', 'AdvertController@additonal_discount')->name('additonal-discount');
+        Route::get('redeem','AdvertController@redeem')->name('redeem');
+        Route::get('get-redeem-list', 'AdvertController@get_redeem_list')->name('get-redeem-list');
+        Route::get('redeem-voucher', 'AdvertController@redeem_voucher')->name('redeem-voucher');
         /*         * ******************** Cart ************************ */
         Route::get('checkout', ['uses' => 'CartController@checkout', 'as' => 'checkout']);
 

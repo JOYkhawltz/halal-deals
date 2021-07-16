@@ -125,6 +125,8 @@ class SiteController extends Controller {
             ];
             $this->SendMail($email_data);
             $data_msg['u_id'] = $model->id;
+            $data_msg['link'] = Route('/');
+           
             $data_msg['msg'] = "You are successfully registered. Please check your email to verify your account.";
             return response()->json($data_msg);
         }

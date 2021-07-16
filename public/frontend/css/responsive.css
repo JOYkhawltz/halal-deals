@@ -60,7 +60,7 @@
     .nav-bar ul li a{ display: block; padding: 10px;}
     .top-bar .topbar-left ul li{ padding-right: 10px;}
     .top-bar .topbar-left ul li a{ font-size: 11px;}
-    .navbar-header .navbar-toggle{ padding-top: 0px;}
+    .navbar-header .navbar-toggle{ padding-top: 8px;}
     .logo-section{ text-align: center;}
 
     .owl-carousel .owl-item img{ min-height: 150px;}
@@ -137,6 +137,7 @@
     .top-banner h2{ font-size: 16px; line-height: 20px; padding-bottom: 15px;}
     .banner-slider .owl-nav .owl-prev{ left: 5px;}
     .banner-slider .owl-nav .owl-next{ right: 5px;}
+    .filter {display: flex; justify-content: center; align-items: center; font-size: 15px;}
     
 
 }
@@ -147,6 +148,7 @@
     .top-banner h2{ font-size: 16px; line-height: 20px; padding-bottom: 15px;}
     .banner-slider .owl-nav .owl-prev{ left: 5px;}
     .banner-slider .owl-nav .owl-next{ right: 5px;}
+    .filter {display: flex; justify-content: center; align-items: center; font-size: 15px; }
    
 
 }
@@ -157,6 +159,7 @@
     .top-banner h2{ font-size: 13px; line-height: 15px; padding-bottom: 15px;}
     .banner-slider .owl-nav .owl-prev{ left: 5px;}
     .banner-slider .owl-nav .owl-next{ right: 5px;}
+    .filter {display: flex; justify-content: center; align-items: center; font-size: 15px; }
     
 
 }

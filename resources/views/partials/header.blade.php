@@ -111,7 +111,7 @@ $categories = ProductType::select('id', 'name')->where('status', '1')->get();
                             <i class="icofont-navigation-menu"></i>                       
                         </button>
                     </div>
-                    <div style="margin-top:12px;" class="nav-bar collapse navbar-collapse" id="myNavbar">
+                    <div style="padding: 8px;" class="nav-bar collapse navbar-collapse" id="myNavbar">
                         <ul>
                             @php
                             use Illuminate\Support\Facades\Cookie;
@@ -162,11 +162,11 @@ $categories = ProductType::select('id', 'name')->where('status', '1')->get();
     </div>
     <style>
         .navi{
-            display: inline; font-size: 16px; padding-right:30px; color:black;
+            display: inline; font-size: 15px; padding-right:15px; color: #ffffff;
         }
     </style>
 
-    <div class="top-bar" >
+    <div class="top-bar" style=" background-color: #096802;" >
         <div class="container">
             <div class="row">
                 <div class= " col-md-9 col-lg-7 "  style="  padding-top:8px; ">
@@ -205,10 +205,10 @@ $categories = ProductType::select('id', 'name')->where('status', '1')->get();
                                         </div>
                                     </div> -->
 
-                <div class=" col-md-1 col-lg-1" style="width: 30%; padding: 0px; border: solid 1px #f7f7f7;">               
+                <div class=" col-md-1 col-lg-1 filter" style="width: 30%; padding: 0px; ">               
                     <div class="top-drop-btn float-left">
                         <div class="dropdown show">
-                            <a style="color: black;" class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filter</a>
+                            <a  class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filter</a>
                             <div class="dropdown-menu cst_menu_new" aria-labelledby="dropdownMenuLink">
                                 <form action="{{Route('search-coupon')}}"  method="get">
                                     <div>
@@ -255,7 +255,7 @@ $categories = ProductType::select('id', 'name')->where('status', '1')->get();
                         </div>
                     </div>
                 </div>
-                <div class=" col-md-2 col-lg-4" style="width:70%; padding: 0px; border: solid 1px #f7f7f7;">
+                <div class=" col-md-2 col-lg-4" style="width:70%; ">
                     <div class="top-search">
                         <form action="{{Route('search-coupon')}}" method="get">
                             <div class="search-wrap">

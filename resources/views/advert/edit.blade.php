@@ -147,7 +147,7 @@
                             <div class="col-sm-6">
                                 <div class="form-group has-error">
                                     <label for="usr">Coupon Discount(%)</label>
-                                    <input class="form-control" id="coupen_discount" name="coupen_discount" type="text" value="{{$model->commission_rate}}" onkeyup="discountcoupen(this);">
+                                    <input class="form-control" id="coupen_discount" name="coupen_discount" readonly="true" type="text" value="{{$model->commission_rate}}" onkeyup="discountcoupen(this);">
 
                                     <span class="help-block" id="help-block_err_coupen"></span>
                                 </div>
@@ -155,7 +155,7 @@
                             <div class="col-sm-6">
                                 <div class="form-group has-error">
                                     <label for="usr">Additional Discount(%)</label>
-                                    <input class="form-control" id="additional_discount" name="additional_discount" value="{{$model->additional_rate}}" onkeyup="additionaldiscount(this);" type="text" >
+                                    <input class="form-control" id="additional_discount" name="additional_discount" readonly="true" value="{{$model->additional_rate}}" onkeyup="additionaldiscount(this);" type="text" >
                                     <span class="help-block" id="help-block_err_addtionalcoupen"></span> 
                                 </div>
                             </div>
@@ -178,7 +178,7 @@
                         </div>
                         <div class="form-group">
                             <div class="frm-btn text-center">
-                                <button class="deflt-btn" type="submit">Submit</button>
+                                <button class="deflt-btn" type="submit">Submit</button>     
                             </div>
                         </div>
                     </form>

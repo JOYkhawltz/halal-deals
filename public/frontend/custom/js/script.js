@@ -154,6 +154,7 @@ $(document).ready(function () {
                 $('#signup_modal').modal('hide');
                 $('#resend-activation-form').find('[name="id"]').val(resp.u_id);
                 $('#resend_activation_modal').modal('show');
+                window.location.reload();
                 ajaxindicatorstop();
             },
             error: function (resp) {
@@ -191,6 +192,7 @@ $(document).ready(function () {
                     closeButton: true,
                     fadeOnHover: true,
                 });
+                window.location.reload();
                 ajaxindicatorstop();
             }
         });
@@ -522,8 +524,8 @@ $(document).ready(function () {
     $(document).on('click', '.delete-advert', function () {
         var id = $(this).data('id');
         $.confirm({
-            title: 'Delete',
-            content: 'Are you sure to delete this advert?',
+            title: 'End Deal Now',
+            content: 'Are you sure to end this deal?',
             buttons: {
                 confirm: {
                     btnClass: 'btn-success',
@@ -559,6 +561,51 @@ $(document).ready(function () {
             }
         });
     });
+    $(document).on('click', '.redeem-voucher', function () {
+        var id = $(this).data('id');
+        $.confirm({
+            title: 'Redeem It Now',
+            content: 'Are you sure to redeem this deal?',
+            buttons: {
+                confirm: {
+                    btnClass: 'btn-success',
+                    action: function () {
+                        var csrf_token = $('input[name=_token]').val();
+                        ajaxindicatorstart();
+                        $.ajax({
+                            type: 'GET',
+                            headers: {'X-CSRF-TOKEN': csrf_token},
+                            url: full_path + 'redeem-voucher',
+                            data: {id: id},
+                            cache: false,
+                            dataType: 'json',
+                            success: function (resp) {
+                                if (resp.status === 200) {
+                                    // $('[data-id="' + id + '"]').closest('tr').remove();
+                                    // if ($('.redeem-voucher').length === 0) {
+                                    //     window.location.reload();
+                                    // }
+                                    window.location.reload();
+
+                                    success_msg(resp.msg);
+                                } else {
+                                    error_msg(resp.msg);
+                                }
+                                ajaxindicatorstop();
+                            }
+                        });
+                    }
+                },
+                cancel: {
+                    btnClass: 'btn-danger'
+                            //
+                }
+            }
+        });
+    });
+
+
+
 
     $(document).on('click', '.category-coupon-checkbox-find', function () {
         var category = [];
@@ -809,7 +856,7 @@ function CartUpdate(value, obj) {
                     var advert_id = $(obj).data('advert_id');
                     var cart_quantity = value;
 
-                    var q =document.getElementById("quanti");
+                    var q =document.getElementById("quanti_"+advert_id);
                     var result = (cart_quantity - Math.floor(cart_quantity)) !== 0;
                     
                    if(cart_quantity < 1 || result ){ 
@@ -830,9 +877,9 @@ function CartUpdate(value, obj) {
                         success: function (resp) {
                             if (resp.type === 1) {
                                // $(obj).closest('tr').remove();
-                               q.value=cart_quantity;
+                                  q.value=cart_quantity;
                                
-                               $('#quanti').html(resp.cart_quantity);
+                               //$('#quanti').html(resp.cart_quantity);
                                $('#cart_count').html(resp.cart_count);
                                $('#total_price').html(resp.total);
                                $('#sub_total_price').html(resp.sub_total);

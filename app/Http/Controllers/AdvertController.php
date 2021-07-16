@@ -81,6 +81,66 @@ class AdvertController extends Controller {
             abort(404);
         }
     }
+    public function get_redeem_list(Request $request) {
+        if ($request->ajax()) {
+            $bus_id = Business::select('bus_ID')->where('user_id', Auth()->guard('frontend')->user()->id)->first();
+            $voucher_list = VoucherDetail::select('*')
+                            ->where('status', '1')->where('bus_ID',$bus_id->bus_ID);
+            return DataTables::of($voucher_list)
+                            
+                            ->editColumn('voucher_ID', function ($model) {
+                                return $model->voucher_ID;
+                            })
+                            ->editColumn('advert_ID', function ($model) {
+                                $adverts = Advert::where('advert_ID', $model->advert_ID)->where('advert_type', '=', 'deal')->first();
+                                return $adverts->hd_price;
+                                return (!empty($model->date)) ? \Carbon\Carbon::parse($model->date)->format('Y-m-d') : 'Not Found';
+                            })
+                            ->editColumn('purchasing_user', function ($model) {
+                                $user=User::where('id','=',$model->purchasing_user)->first();
+                                return $user->first_name.' '.$user->last_name;
+                            })
+                            ->editColumn('created_at', function ($model) {
+                                return (!empty($model->created_at)) ? \Carbon\Carbon::parse($model->created_at)->format('Y-m-d') : 'Not Found';
+                            })
+                            ->editColumn('status', function ($model) {
+                            if ($model->redeem == '1') {
+                                    $status = '<span class="pending-status"><i class="icofont-check"></i>Redeemed</span>';
+                                } else if ($model->redeem == '2') {
+                                    $status = '<span class="cnf-status"><i class="icofont-warning"></i>Not Redeemed</span>';
+                                }
+                                return $status;
+                            })
+                            ->addColumn('action', function ($model) {
+                                if ($model->redeem == '1') {
+                                    $redeem = '<p class="edit">Already Redeemed</p>' ;
+                                } else if ($model->redeem == '2') {
+                                    // $redeem = '<a href="' . Route("advert-voucheredit-details", [$model->id]) . '" class="edit"><i class="icofont-ui-edit"></i> Redeem it</a>' ;
+                                  $redeem ='<a href="javascript:void(0);" name="redeem" class="edit redeem-voucher" data-id="'. $model->voucher_ID. '"><i class="icofont-coins"></i> Redeem</a>';
+                                }
+                                return $redeem;
+                                // return
+                                // '<a href="' . Route("advert-voucheredit-details", [$model->id]) . '" class="edit"><i class="icofont-ui-edit"></i> Redeem</a>' ;
+                            })
+                            
+                            ->rawColumns(['status','action'])
+                            ->make(true);
+        }
+        if (Auth()->guard('frontend')->user()->type_id === '3') {
+            
+            return view('advert.redeem');
+        } else {
+            abort(404);
+        }
+    }
+
+
+
+
+
+
+
+
 public function voucher_details($id) {
         if (Auth()->guard('frontend')->user()->type_id === '3') {
             $vouchers=VoucherDetail::where('advert_ID',$id)->whereNotNull('purchasing_user')->paginate(10);
@@ -342,10 +402,12 @@ public function voucher_details($id) {
                     $checkAdvert->update(['status' => '3']);
                     $data['status'] = 200;
                     $data['msg'] = 'Deal Deleted successfully.';
+                    $data['link'] = route('get-advert-deal-list');
                 } else {
                     $checkAdvert->update(['status' => '3']);
                     $data['status'] = 200;
                     $data['msg'] = 'Voucher Deleted successfully.';
+                    
                 }
             } else {
                 $data['msg'] = 'Opps! something went wrong.';
@@ -353,6 +415,36 @@ public function voucher_details($id) {
             return response()->json($data);
         }
     }
+
+    public function redeem_voucher(Request $request) {
+        if ($request->ajax()) {
+            $data = [];
+            $voucher_id = $request->input('id');
+            $checkVoucher = VoucherDetail::where('voucher_ID', $voucher_id)->first();
+            if (count($checkVoucher) > 0) {
+                if ($checkVoucher->status == 1) {
+                    $input['redeem'] = 1;
+                    $checkVoucher->update($input);
+                    $data['status'] = 200;
+                    $data['msg'] = 'Voucher Redeemed successfully.';
+                    $data['link'] = route('get-redeem-list');
+                } else {
+                    // $checkVoucher->update(['redeem' => '1']);
+                    // $data['status'] = 200;
+                    // $data['msg'] = 'Voucher Redeemed successfully.';
+                    // $data['link'] = route('get-redeem-list');
+                    $checkAdvert->update(['status' => '3']);
+                    $data['status'] = 200;
+                    $data['msg'] = 'Voucher Deleted successfully.';
+                    
+                }
+            } else {
+                $data['msg'] = 'Opps! something went wrong.';
+            }
+            return response()->json($data);
+        }
+    }
+
 
     public function store($request){
         $id = $request->input('id');
@@ -475,7 +567,10 @@ public function voucher_details($id) {
         }
         return $hd_price;
     }
+    public function redeem(request $request){
+        return view('advert.redeem');
 
+    }
     
 
 }
