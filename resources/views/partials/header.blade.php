@@ -22,11 +22,11 @@ $categories = ProductType::select('id', 'name')->where('status', '1')->get();
                         </form>
                     </div>
                 </div> -->
-                <div class= "col-sm-0 col-md-2 col-lg-3" >
+                <div class= "col-sm-0 col-md-0 col-lg-3" >
                 <!--<p style= "font-size: 18px;  margin-top: 18px;"><i style="font-size:22px; color: darkgreen;"class="icofont-phone"></i>(+1) 234 456 7891</p>-->
                 </div>
-                <div class="col-sm-6 col-md-3 col-lg-4 " style="width:50%">
-                    <div style="padding-top:10px;  height:50px; text-align:center;" class="logo-section"><a href="{{ Route('/') }}"><img style = "height:100%;" src="{{ URL::asset('public/frontend/images/mail_logo.png') }}" alt="" /></a></div>
+                <div class="col-sm-6 col-md-5 col-lg-4 " style="width:50%">
+                    <div style="padding-top:10px;  height:50px; " class="logo-section"><a href="{{ Route('/') }}"><img style = "height:100%;" src="{{ URL::asset('public/frontend/images/mail_logo.png') }}" alt="" /></a></div>
                 </div>
                 <!--                <div class="col -sm-2 col-6">
                                     <div class="top-drop-btn float-left">
@@ -160,11 +160,7 @@ $categories = ProductType::select('id', 'name')->where('status', '1')->get();
             </div>
         </div>
     </div>
-    <style>
-        .navi{
-            display: inline; font-size: 15px; padding-right:15px; color: #ffffff;
-        }
-    </style>
+   
 
     <div class="top-bar" style=" background-color: #096802;" >
         <div class="container">

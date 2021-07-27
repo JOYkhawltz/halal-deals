@@ -41,10 +41,12 @@ body{ background:#ffffff; margin:0px; padding:0px !important; font-size: 14px; l
 .nav-bar ul li.profile-drop-menu .dropdown-menu a{ color: #333;}
 .nav-bar ul li.profile-drop-menu .dropdown-menu a:hover{ background-color: #17c40a; color: #fff;}
 .nav-bar ul li.cart-menu.notifi a span{ width: 7px; height: 7px; top:0;}
+.navi{display: inline; font-size: 15px; padding-right:15px; color: #ffffff; font-weight:400;}
+.navi:hover{ color: white; font-weight: 550;}
 
-
-.logo-section{}
+.logo-section{transition: all .4s ease-in-out;}
 .logo-section img{ max-width: 100%;}
+.logo-section:hover{transform: scale(1.1);}
 
 .top-header{ background-color: #fff; padding: 15px 0px;
              -webkit-box-shadow: 0px 5px 10px 0px rgba(223,225,228,1);
@@ -87,7 +89,7 @@ body{ background:#ffffff; margin:0px; padding:0px !important; font-size: 14px; l
 .body-box .body-box-inner .product-box .product-info{ padding: 12px;}
 .body-box .body-box-inner .product-box .product-info h3{ font-size: 14px; font-weight: 400; color: #222; line-height: 20px;}
 
-.offer-box{ border: #e1e1e1 solid 1px; padding: 15px; margin-bottom: 30px;}
+.offer-box{ border: #e1e1e1 solid 1px; padding: 15px; margin-bottom: 30px; transition: all .3s ease-in-out;}
 .offer-box .off-price{ color: #2874f0; font-size: 22px; font-weight: 700; text-transform: uppercase; word-break: break-word;}
 .offer-box .offer-txt{ padding: 15px 0px; color: #222; font-size: 14px; font-weight: 400; }
 .offer-box .offer-txt span{font-weight: 700; }
@@ -96,6 +98,17 @@ body{ background:#ffffff; margin:0px; padding:0px !important; font-size: 14px; l
 .view-more{ font-size: 12px; line-height: 38px; color: #2874f0; font-weight: 700; }
 .view-more a{ font-size: 16px; color: #17c40a; font-weight: 700; }
 .view-more a:hover{ color: #2874f0;}
+.offer-box:hover {
+   
+    border: 1px solid #e1e1e1;
+    box-sizing: border-box;
+    padding: 10px !important;
+    -webkit-box-shadow: 4px 4px 4px -4px  rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 4px 4px -4px  rgba(0,0,0,0.75);
+    box-shadow: 4px 4px 4px -4px rgba(0,0,0,0.75);
+    
+    transform: scale(1);
+  } 
 
 .subscribe-txt{ font-size: 13px; color: #484848; line-height: 20px;}
 .subscribe-form input[type="email"]{  background-color: #fff; border-radius: 0px; border: #ddd solid 1px; color: #aaaaaa; font-size: 12px; width: auto; height: 40px; padding: 10px;}
