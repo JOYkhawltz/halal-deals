@@ -159,11 +159,12 @@
 @media only screen and (min-width: 320px) and (max-width: 479px) {
 
     .banner-search-caption{ max-width: 200px;}
-    .top-banner h2{ font-size: 13px; line-height: 15px; padding-bottom: 15px;}
+    .top-banner h2{ font-size: 15px; font-weight: 600; line-height: 15px; padding-bottom: 15px;}
     .banner-slider .owl-nav .owl-prev{ left: 5px;}
     .banner-slider .owl-nav .owl-next{ right: 5px;}
     .filter {display: flex; justify-content: center; align-items: center; font-size: 15px; }
     .logo-section{text-align: left;}
+    .top-banner .banner-caption input[type="text"]{ font-size: 12px; }
     
 
 }

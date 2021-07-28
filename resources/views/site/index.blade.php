@@ -32,8 +32,9 @@
 
         @if(count($deals)>0)
         <div class="body-box" style="background-color: #17c40a33; margin-top: 0px;";>
-        <div class="container">
-            <h2 style="border-bottom: #5e5e5e solid 1px; font-size: 40px; text-align: center; font-family:-webkit-pictograph;" >HOT OFFERS</h2>
+        <div class="">
+            <h2 class="hotoffers-heading" style="" >HOT OFFERS</h2>
+            <hr class="line-hotoffer"></hr> 
             <div class="body-box-inner">
                 <div class="owl-carousel offer-slider">
                     @foreach($hot_deals as $deal)

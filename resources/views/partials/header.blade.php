@@ -166,7 +166,7 @@ $categories = ProductType::select('id', 'name')->where('status', '1')->get();
     <div class="top-bar" style=" background-color: #096802;" >
         <div class="container">
             <div class="row">
-                <div class= " col-md-9 col-lg-7 "  style="  padding-top:8px; ">
+                <div class= " col-md-9 col-lg-7 " >
                     <a class="navi" href="{{ URL::asset('search-coupon?category%5B%5D=1')}}">Wellbeing</a>
                     <a class="navi" href="{{ URL::asset('search-coupon?category%5B%5D=2')}}">Hotels</a>
                     <a class="navi" href="{{ URL::asset('search-coupon?category%5B%5D=3')}}">Products</a>
