@@ -41,7 +41,7 @@ body{ background:#ffffff; margin:0px; padding:0px !important; font-size: 14px; l
 }
 .nav-bar ul li a.hvr-signin{box-shadow: inset 0 0 0 2px #096802, 0 0 1px rgba(0, 0, 0, 0);
     padding: 0.5em 1rem; 
-     font-size:18px; color: #096802; font-weight: 600; transition: transform 350ms;}
+     font-size:18px; color: #096802; font-weight: 500; transition: transform 350ms;}
 .nav-bar ul li a.hvr-signin:hover{
     transform: translateY(-5px);
 }
