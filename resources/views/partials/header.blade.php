@@ -134,8 +134,9 @@ $categories = ProductType::select('id', 'name')->where('status', '1')->get();
                             @endif
 
                             @if (Auth()->guard('frontend')->guest())
-                            <li><a style="font-size:18px; color: black;" href="javascript:;" onclick="showSignupModal();">Signup</a></li>
-                            <li><a style="font-size:18px; color: black;" href="javascript:;" onclick="showSigninModal();">Login</a></li>
+                            <li><a class="hvr-signin" style=" " href="javascript:;" onclick="showSigninModal();">Login</a></li>
+                            <li><a class="hvr-signup" style=" " href="javascript:;" onclick="showSignupModal();">Signup</a></li>
+                            
                             @else
                             @if (Auth()->guard('frontend')->user()->type_id ==="3")
                             <li class="cart-menu nw"><a style="font-size:18px; color: black;" href="{{Route('withdrawal-wallet')}}" title="Wallet"><i style="font-size:22px; color: darkgreen;" class="icofont-wallet"></i><i style="font-size:22px; color: darkgreen;" class="fa fa-gbp" aria-hidden="true"></i>{{number_format($wallet->wallet_amount,2)}}</a></li>
