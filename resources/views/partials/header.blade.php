@@ -9,7 +9,7 @@ $categories = ProductType::select('id', 'name')->where('status', '1')->get();
 ?>
 <section class="header-section">
     <div class="top-bar">
-        <div class="container">
+        <div class="">
             <div class="row">
                 <!--+*
                 <div class="col-sm-4">
@@ -22,12 +22,74 @@ $categories = ProductType::select('id', 'name')->where('status', '1')->get();
                         </form>
                     </div>
                 </div> -->
-                <div class= "col-sm-0 col-md-0 col-lg-3" >
-                <!--<p style= "font-size: 18px;  margin-top: 18px;"><i style="font-size:22px; color: darkgreen;"class="icofont-phone"></i>(+1) 234 456 7891</p>-->
+                <div class="col-sm-6 col-md-5 col-lg-3 " style="width:50%">
+                    <div style="padding-top:10px;  height:50px; padding-left: 20px; " class="logo-section"><a href="{{ Route('/') }}"><img style = "height:100%;" src="{{ URL::asset('public/frontend/images/mail_logo.png') }}" alt="" /></a></div>
                 </div>
-                <div class="col-sm-6 col-md-5 col-lg-4 " style="width:50%">
-                    <div style="padding-top:10px;  height:50px; " class="logo-section"><a href="{{ Route('/') }}"><img style = "height:100%;" src="{{ URL::asset('public/frontend/images/mail_logo.png') }}" alt="" /></a></div>
+
+                
+                <div class=" col-md-1 col-lg-1 filter" style="width: 30%; padding: 0px; ">               
+                    <div class="top-drop-btn float-left">
+                        <div class="dropdown show">
+                            <a  class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filter</a>
+                            <div class="dropdown-menu cst_menu_new" aria-labelledby="dropdownMenuLink">
+                                <form action="{{Route('search-coupon')}}"  method="get">
+                                    <div>
+                                        <div class="filter_box">
+                                            <h2 class="mb-2">Categories</h2>
+                                            <ul class="cust-scroll-table">
+                                                @forelse($categories as $category)
+                                                <li>
+                                                    <div class="custom-control custom-checkbox mr-sm-2">
+                                                        <input type="checkbox" name="category[]" class="custom-control-input category-coupon-checkbox-find" id="check_left_{{$category->id}}" value="{{$category->id}}">
+                                                        <label class="custom-control-label" for="check_left_{{$category->id}}">{{$category->name}}</label>
+                                                    </div>
+                                                </li>
+                                                @empty
+                                                @endforelse
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="filter_box d-none">
+                                            <h2>Sub Categories</h2>
+                                            <ul class="cust-scroll-table"  id="fetch-subcategory">
+
+                                            </ul>
+                                        </div>
+
+                                        <div class="filter_box">
+                                             <h2>Location</h2><br/>
+                                            <input type="text" class="form-control " name="town" placeholder="Enter town" value="{{old('town')}}"><br/>
+                                            <input type="text" class="form-control " name="city" placeholder="Enter city" value="{{old('city')}}"><br/>
+                                            <input type="text" class="form-control " name="post_code" placeholder="Enter postcode" value="{{old('post_code')}}" >
+                                        </div>
+                                        <div class="filter_box">
+                                            <h2>Price</h2><br/>
+                                            <input type="text" class="form-control " name="min_price" placeholder="Minimum price" value="{{old('max_price')}}" ><br/>
+                                            <input type="text" class="form-control " name="max_price" placeholder="Maximum price" value="{{old('max_price')}}" >
+                                        </div>
+                                        <div class="text-center p-2">
+                                            <button type="Submit" class="deflt-btn" style="border:none;cursor: pointer;">Find</button>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <div class=" col-md-2 col-lg-4" style="width:70%; ">
+                    <div class="top-search">
+                        <form action="{{Route('search-coupon')}}" method="get">
+                            <div class="search-wrap">
+                                <input type="text" name="title" placeholder="Search for mobile offers, watches, food...">
+                                <button type="Submit"><i class="icofont-search"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                
+                
                 <!--                <div class="col -sm-2 col-6">
                                     <div class="top-drop-btn float-left">
                                         <div class="dropdown show">
@@ -105,7 +167,7 @@ $categories = ProductType::select('id', 'name')->where('status', '1')->get();
                     </div>
                 </div>-->
 
-                <div class="col-sm-6 col-md-7 col-lg-5" style="width:50%" >
+                <div class="col-sm-6 col-md-7 col-lg-4" style="width:50%" >
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                             <i class="icofont-navigation-menu"></i>                       
@@ -161,10 +223,10 @@ $categories = ProductType::select('id', 'name')->where('status', '1')->get();
             </div>
         </div>
     </div>
-   
+    
 
-    <div class="top-bar" style=" background-color: #096802;" >
-        <div class="container">
+    <div class="top-bar" style=" background-color: #e8edf3; padding: 2px; padding-left: 20px;" >
+        <div class="">
             <div class="row">
                 <div class= " col-md-9 col-lg-7 " >
                     <a class="navi" href="{{ URL::asset('search-coupon?category%5B%5D=1')}}">Wellbeing</a>
@@ -202,65 +264,10 @@ $categories = ProductType::select('id', 'name')->where('status', '1')->get();
                                         </div>
                                     </div> -->
 
-                <div class=" col-md-1 col-lg-1 filter" style="width: 30%; padding: 0px; ">               
-                    <div class="top-drop-btn float-left">
-                        <div class="dropdown show">
-                            <a  class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filter</a>
-                            <div class="dropdown-menu cst_menu_new" aria-labelledby="dropdownMenuLink">
-                                <form action="{{Route('search-coupon')}}"  method="get">
-                                    <div>
-                                        <div class="filter_box">
-                                            <h2 class="mb-2">Categories</h2>
-                                            <ul class="cust-scroll-table">
-                                                @forelse($categories as $category)
-                                                <li>
-                                                    <div class="custom-control custom-checkbox mr-sm-2">
-                                                        <input type="checkbox" name="category[]" class="custom-control-input category-coupon-checkbox-find" id="check_left_{{$category->id}}" value="{{$category->id}}">
-                                                        <label class="custom-control-label" for="check_left_{{$category->id}}">{{$category->name}}</label>
-                                                    </div>
-                                                </li>
-                                                @empty
-                                                @endforelse
-                                            </ul>
-                                        </div>
-                                        
-                                        <div class="filter_box d-none">
-                                            <h2>Sub Categories</h2>
-                                            <ul class="cust-scroll-table"  id="fetch-subcategory">
+                <div class= "col-sm-0 col-md-0 col-lg-5" style="text-align: right; padding-right: 20px;" >
+                    <a class="navi" href="{{ URL::asset('')}}">Halaldeals response to COVID-19</a>
 
-                                            </ul>
-                                        </div>
-
-                                        <div class="filter_box">
-                                             <h2>Location</h2><br/>
-                                            <input type="text" class="form-control " name="town" placeholder="Enter town" value="{{old('town')}}"><br/>
-                                            <input type="text" class="form-control " name="city" placeholder="Enter city" value="{{old('city')}}"><br/>
-                                            <input type="text" class="form-control " name="post_code" placeholder="Enter postcode" value="{{old('post_code')}}" >
-                                        </div>
-                                        <div class="filter_box">
-                                            <h2>Price</h2><br/>
-                                            <input type="text" class="form-control " name="min_price" placeholder="Minimum price" value="{{old('max_price')}}" ><br/>
-                                            <input type="text" class="form-control " name="max_price" placeholder="Maximum price" value="{{old('max_price')}}" >
-                                        </div>
-                                        <div class="text-center p-2">
-                                            <button type="Submit" class="deflt-btn" style="border:none;cursor: pointer;">Find</button>
-                                        </div>
-                                    </div>
-                                </form>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class=" col-md-2 col-lg-4" style="width:70%; ">
-                    <div class="top-search">
-                        <form action="{{Route('search-coupon')}}" method="get">
-                            <div class="search-wrap">
-                                <input type="text" name="title" placeholder="Search for mobile offers, watches, food...">
-                                <button type="Submit"><i class="icofont-search"></i></button>
-                            </div>
-                        </form>
-                    </div>
+                    <!--<p style= "font-size: 18px;  margin-top: 18px;"><i style="font-size:22px; color: darkgreen;"class="icofont-phone"></i>(+1) 234 456 7891</p>-->
                 </div>
 
                <!-- <div class="col-sm-0">

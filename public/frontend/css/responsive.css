@@ -16,7 +16,7 @@
     flex: 80%;
     max-width: 80%;
 }
-.logo-section{text-align: right;}
+.logo-section{text-align: auto;}
 }
 
 @media only screen and (min-width: 768px) and (max-width: 959px) {
@@ -62,7 +62,7 @@
     .top-bar .topbar-left ul li{ padding-right: 10px;}
     .top-bar .topbar-left ul li a{ font-size: 11px;}
     .navbar-header .navbar-toggle{ padding-top: 8px;}
-    .logo-section{ text-align: center;}
+    .logo-section{ text-align: left;}
 
     .owl-carousel .owl-item img{ min-height: 150px;}
     .top-search{ margin: 10px 0px;}

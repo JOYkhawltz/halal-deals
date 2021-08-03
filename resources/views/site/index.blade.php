@@ -4,17 +4,17 @@
 @stop
 @section('content')
 <section class="main-body-section">
-        <div class="top-banner" >
+        <div class="top-banner"  >
             <div class="owl-carousel banner-slider">
                 <div class="item">
-                    <img src="{{($pages[1]->type==='2' && $pages[1]->content_body!='')?URL::asset('public/uploads/frontend/cms/pictures/'.$pages[1]->content_body):URL::asset('public/frontend/images/banner-bg.jpg')}}" />
+                    <img style="height: 500px;" src="{{($pages[1]->type==='2' && $pages[1]->content_body!='')?URL::asset('public/uploads/frontend/cms/pictures/'.$pages[1]->content_body):URL::asset('public/frontend/images/banner-bg.jpg')}}" />
                 </div>
                 <div class="item">
-                    <img src="{{($pages[2]->type==='2' && $pages[2]->content_body!='')?URL::asset('public/uploads/frontend/cms/pictures/'.$pages[2]->content_body):URL::asset('public/frontend/images/banner-bg2.jpg')}}" />
+                    <img style="height: 500px;" src="{{($pages[2]->type==='2' && $pages[2]->content_body!='')?URL::asset('public/uploads/frontend/cms/pictures/'.$pages[2]->content_body):URL::asset('public/frontend/images/banner-bg2.jpg')}}" />
                 </div>
             </div>
             @if($search_and_text_area->value == 1)
-            <div class="banner-search-caption">
+             <!-- <div class="banner-search-caption">
                 <div class="row">
                     <div class="col-sm-8 mx-auto banner-caption col-12">
                         <h2>{!!($pages[0]->type==='1' && $pages[0]->content_body!==NULL)?$pages[0]->content_body:'Find foods' !!}</h2>
@@ -26,19 +26,19 @@
                         </form>
                     </div>
                 </div>
-            </div>
+            </div> -->
             @endif
         </div>
 
         @if(count($deals)>0)
-        <div class="body-box" style="background-color: #17c40a33; margin-top: 0px;";>
-        <div class="">
-            <h2 class="hotoffers-heading" style="" >HOT OFFERS</h2>
+        <div class="body-box" style="background-color: #00000000; margin-top: -250px; z-index: 2; ">
+        <div class="" style="" >
+            <h2 class="hotoffers-heading" style="z-index: 90; position: relative; text-align: center; " >HOT OFFERS</h2>
             <hr class="line-hotoffer"></hr> 
-            <div class="body-box-inner">
-                <div class="owl-carousel offer-slider">
+            <div class="body-box-inner" style="padding: 0px;">
+                <div class="owl-carousel offer-slider" style="padding: 20px; background: linear-gradient(to bottom, #00000000, #00000000 0%, #eee 50%, #fff 75%);">
                     @foreach($hot_deals as $deal)
-                    <div class="item">
+                    <div class="item" >
                        @if($deal->other_options_available=='1'&&$deal->new_cust_only=='1')
                         @if (Auth()->guard('frontend')->guest())
                         <a href="javascript:;" onclick="showSigninModal();">
@@ -248,7 +248,58 @@
             </div>
         </div> -->   
 
-        <div class="body-box">
+
+        <div class="body-box" >
+        <div class="" style="" >
+        <h2 class="hotoffers-heading">Halal Deals</h2>
+            <!-- <h2 class="hotoffers-heading" style="" >HOT OFFERS</h2>
+            <hr class="line-hotoffer"></hr>  -->
+            <div class="body-box-inner">
+                <div class="owl-carousel offer-slider" style="padding: 20px; background: linear-gradient( 180deg , #f9f9f900, #ffffff);">
+                    @foreach($deals as $deal)
+                    <div class="item" >
+                       @if($deal->other_options_available=='1'&&$deal->new_cust_only=='1')
+                        @if (Auth()->guard('frontend')->guest())
+                        <a href="javascript:;" onclick="showSigninModal();">
+                        @else
+                        <a href="{{Route('advert-details',['id'=>$deal->advert_ID])}}">
+                        @endif
+                        @else
+                        <a href="{{Route('advert-details',['id'=>$deal->advert_ID])}}">
+                        @endif
+                            <div class="offer-box" style="padding:0px;">
+                                <div class="offer-box-top">
+                                    @if(count($deal->product)>0)
+                                    @if(isset($deal->product->defaultPic))
+                                    <img class="img-fluid" src="{{ URL::asset('public/uploads/frontend/product/preview/'.$deal->product->defaultPic->image_name) }}"/>
+                                    @else
+                                    <img class="img-fluid" src="{{ URL::asset('public/frontend/images/product1.png') }}"/>
+                                    @endif
+                                    @endif
+                                </div>
+                                <div class="offer-box-bottom" style="padding: 10px;">
+                                    <div>
+                                    <h3>{{str_limit($deal->title,15)}}</h3>
+                                    <h5>{{$deal->business->name}}</h5>
+                                    </div>
+                                    <div>
+                                        <span class="ourprice">Our price<h4><i class="icofont-pound"></i>{{$deal->cost_price}}</h4></span>
+                                        <span class="normalprice">Normal price<h4><i class="icofont-pound"></i>{{$deal->hd_price}}</h4></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+
+
+        <!-- <div class="body-box">
             <h2>Halal Deals</h2>
             <div class="body-box-inner">
                 <div class="row">
@@ -290,7 +341,7 @@
                 </div>
                 <div class="view-more text-center"><a href="{{Route('search-coupon')}}">Show More <i class="icofont-rounded-right"></i></a></div>
             </div>
-        </div>
+        </div> -->
         @endif
         <!--        <div class="body-box">
                     <h2>Get The Latest & Best Coupon/Offer Ale rts</h2>
