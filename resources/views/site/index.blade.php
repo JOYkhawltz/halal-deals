@@ -31,12 +31,12 @@
         </div>
 
         @if(count($deals)>0)
-        <div class="body-box" style="background-color: #00000000; margin-top: -250px; z-index: 2; ">
+        <div class="body-box" style="background: linear-gradient(to bottom, #00000000, #00000000 0%, #eee 50%, #fff 75%); margin-top: -250px; position: relative; z-index: 2; ">
         <div class="" style="" >
-            <h2 class="hotoffers-heading" style="z-index: 90; position: relative; text-align: center; " >HOT OFFERS</h2>
-            <hr class="line-hotoffer"></hr> 
+            <h2 class="hotoffers-heading" style="z-index: 90; text-align: center; " >HOT OFFERS</h2>
+            <!-- <hr class="line-hotoffer"></hr>  -->
             <div class="body-box-inner" style="padding: 0px;">
-                <div class="owl-carousel offer-slider" style="padding: 20px; background: linear-gradient(to bottom, #00000000, #00000000 0%, #eee 50%, #fff 75%);">
+                <div class="owl-carousel offer-slider" style="padding: 20px; ">
                     @foreach($hot_deals as $deal)
                     <div class="item" >
                        @if($deal->other_options_available=='1'&&$deal->new_cust_only=='1')
@@ -141,7 +141,7 @@
         @endif
         @if(count($today_deals)>0)
         <div class="body-box">
-            <h2>POPULAR OFFERS OF THE DAY</h2>
+            <h2 class="hotoffers-heading">POPULAR OFFERS OF THE DAY</h2>
             <div class="body-box-inner">
                 <div class="owl-carousel offer-slider">
                     @foreach($today_deals as $deal)
