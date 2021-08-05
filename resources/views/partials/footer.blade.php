@@ -19,7 +19,7 @@ $text=Cms::where('slug','=','footer_text')->first();
                         <div class="footer-social">
                             <a href="{{ ($social_link[0]->value != "") ? $social_link[0]->value : $social_link[0]->default }}" class="facebook"><i class="icofont-facebook"></i></a>
                             <a href="{{ ($social_link[1]->value != "") ? $social_link[1]->value : $social_link[0]->default }}" class="facebook"><i class="icofont-instagram"></i></a>
-                            <a href="{{ ($social_link[2]->value != "") ? $social_link[2]->value : $social_link[0]->default }}" class="facebook"><i class="icofont-youtube"></i></a>
+                            <a href="{{ ($social_link[2]->value != "") ? $social_link[2]->value : $social_link[0]->default }}" class="facebook"><i class="icofont-youtube-play"></i></a>
                         </div>
                     </div>
                 </div>

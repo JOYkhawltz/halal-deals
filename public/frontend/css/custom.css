@@ -58,7 +58,7 @@ body{ background:#ffffff; margin:0px; padding:0px !important; font-size: 14px; l
 
 
 
-.nav-bar ul li.cart-menu a{ padding-right: 15px; font-size: 20px; position: relative;}
+.nav-bar ul li.cart-menu a{ padding-right: 14px; font-size: 20px; position: relative;}
 .nav-bar ul li.cart-menu a span{ font-size: 12px; position: absolute; top: -5px; }
 .nav-bar ul li.profile-menu{ padding-left: 25px;}
 .nav-bar ul li.profile-menu img{ width: 35px; height: 35px; border-radius: 5px;}
