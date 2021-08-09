@@ -27,8 +27,10 @@ $categories = ProductType::select('id', 'name')->where('status', '1')->get();
                 </div>
 
                 
-                <div class="col-sm-1 col-md-1 col-lg-1 filter" style="width: 30%; padding: 0px; ">               
-                    <div class="top-drop-btn float-left">
+                
+                <div class="col-sm-9 col-md-5 col-lg-5">
+                <div class="filter" style="padding-right: 10px; display: inline-block; float:left">               
+                    <div class="top-drop-btn">
                         <div class="dropdown show">
                             <a  class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filter</a>
                             <div class="dropdown-menu cst_menu_new" aria-labelledby="dropdownMenuLink">
@@ -77,8 +79,7 @@ $categories = ProductType::select('id', 'name')->where('status', '1')->get();
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-9 col-md-4 col-lg-4" style="width:70%; ">
-                    <div class="top-search">
+                    <div class="top-search" style="display:inline-block; width: 79%; margin: 0px; !important">
                         <form action="{{Route('search-coupon')}}" method="get">
                             <div class="search-wrap">
                                 <input type="text" name="title" placeholder="Search for mobile offers, watches, food...">
@@ -228,7 +229,7 @@ $categories = ProductType::select('id', 'name')->where('status', '1')->get();
     <div class="top-bar" style=" background-color: #e8edf3; padding: 0px; padding-left: 0px;" >
         <div class="">
             <div class="row">
-                <div class= " col-md-9 col-lg-9 " >
+                <div class= " col-md-9 col-lg-8 " >
                     <a class="navi" href="{{ URL::asset('search-coupon?category%5B%5D=1')}}">Wellbeing</a>
                     <a class="navi" href="{{ URL::asset('search-coupon?category%5B%5D=2')}}">Hotels</a>
                     <a class="navi" href="{{ URL::asset('search-coupon?category%5B%5D=3')}}">Products</a>
@@ -264,8 +265,8 @@ $categories = ProductType::select('id', 'name')->where('status', '1')->get();
                                         </div>
                                     </div> -->
 
-                <div class= "col-sm-0 col-md-0 col-lg-3" style="text-align: center; padding-right: 20px; border-radius: 7px 0px 0px 7px; background-color: darkgreen;" >
-                    <a class="navi" style="color: white; border: solid 1px darkgreen;" href="{{ URL::asset('')}}">Halaldeals response to COVID-19</a>
+                <div class= "col-sm-0 col-md-0 col-lg-4" style="text-align: center; padding-right: 20px; border-radius: 7px 0px 0px 7px; background-color: darkgreen;" >
+                    <a class="navi-covid" href="{{ URL::asset('')}}">Halaldeals response to COVID-19</a>
 
                     <!--<p style= "font-size: 18px;  margin-top: 18px;"><i style="font-size:22px; color: darkgreen;"class="icofont-phone"></i>(+1) 234 456 7891</p>-->
                 </div>

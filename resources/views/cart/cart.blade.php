@@ -60,7 +60,7 @@
                                 <!--<td class="text-center">{{$cart->quantity}}</td>-->
                                 <td class="text-center">
                                 
-                                <input  type="number" id="quanti_{{$cart->advert_ID}}" min=1 onchange="CartUpdate(value ,this);" data-advert_type="deal" data-advert_id="{{$cart->advert_ID}}" name="quantity" value="{{$cart->quantity}}"   > </td> 
+                                <input  type="number" style="width: 3em;" id="quanti_{{$cart->advert_ID}}" min=1 onchange="CartUpdate(value ,this);" data-advert_type="deal" data-advert_id="{{$cart->advert_ID}}" name="quantity" value="{{$cart->quantity}}"   > </td> 
                                 
                                 <!--<td data-th="Subtotal nw_txt_bold" class="text-center"><i class="fa fa-gbp" aria-hidden="true"></i>{{number_format((($cart->item_price)*$cart->quantity),2)}}</td>-->
                                 <td data-th="Subtotal nw_txt_bold" class="text-center"><i class="fa fa-gbp" aria-hidden="true"></i>{{$cart->item_price}}</td>
