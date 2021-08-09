@@ -26,9 +26,75 @@ $categories = ProductType::select('id', 'name')->where('status', '1')->get();
                     <div style="padding-top:10px;  height:50px; padding-left: 20px; " class="logo-section"><a href="{{ Route('/') }}"><img style = "height:100%;" src="{{ URL::asset('public/frontend/images/mail_logo.png') }}" alt="" /></a></div>
                 </div>
 
+
+
+
+
+
+                <div class="col-sm-1 col-md-4 order-md-12 col-lg-4 " style="width:50%" >
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <i class="icofont-navigation-menu"></i>                       
+                        </button>
+                    </div>
+                    <div style="padding: 8px;" class="nav-bar collapse navbar-collapse" id="myNavbar">
+                        <ul>
+                            @php
+                            use Illuminate\Support\Facades\Cookie;
+                            if (Auth()->guard('frontend')->guest() && Cookie::has('guest_user_halaldeals')) {
+                            $user_id = Cookie::get('guest_user_halaldeals');
+                            } else if(!Auth()->guard('frontend')->guest()) {
+                            $user_id = Auth()->guard('frontend')->user()->id;
+                            }else{
+                            $user_id=0;
+                            }
+                            if($user_id!==0){
+                            $cart_count=App\Cart::where('user_id','=',$user_id)->wherestatus('1')->count();
+                            }else{
+                            $cart_count=0;
+                            }
+                            $wallet=App\Business::where('user_id','=',$user_id)->first();
+                            @endphp
+                            @if (Auth()->guard('frontend')->guest() || (isset(Auth()->guard('frontend')->user()->type_id) && Auth()->guard('frontend')->user()->type_id ==="4"))
+                            <li class="cart-menu"><a href="{{ Route('cart') }}" title="cart"><i style="font-size:22px; color: darkgreen;" class="icofont-shopping-cart"></i><span id="cart_count">{{$cart_count}}</span></a></li>
+                            @endif
+
+                            @if (Auth()->guard('frontend')->guest())
+                            <li><a class="hvr-signin" style=" " href="javascript:;" onclick="showSigninModal();">Login</a></li>
+                            <li><a class="hvr-signup" style=" " href="javascript:;" onclick="showSignupModal();">Signup</a></li>
+                            
+                            @else
+                            @if (Auth()->guard('frontend')->user()->type_id ==="3")
+                            <li class="cart-menu nw"><a style="font-size:18px; color: black;" href="{{Route('withdrawal-wallet')}}" title="Wallet"><i style="font-size:22px; color: darkgreen;" class="icofont-wallet"></i><i style="font-size:22px; color: darkgreen;" class="fa fa-gbp" aria-hidden="true"></i>{{number_format($wallet->wallet_amount,2)}}</a></li>
+                            @endif
+                            <li class="profile-menu">
+                                <img src="{{(Auth()->guard('frontend')->user()->image!='')? URL::asset('public/uploads/frontend/profile_picture/preview').'/'.Auth()->guard('frontend')->user()->image:URL::asset('public/frontend/images/default-pic.jpeg') }}" alt="" />
+                            </li>
+                            <li class="profile-drop-menu">
+                                <div class="dropdown show">
+                                    <a style="color: black;" class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth()->guard('frontend')->user()->full_name }}</a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <a class="dropdown-item" href="{{ Route('dashboard') }}">Dashboard</a>
+                                        <a class="dropdown-item" href="{{ Route('my-profile') }}">My Profile</a>
+                                        <a class="dropdown-item" href="{{ Route('logout') }}">Logout</a>
+                                    </div>
+                                </div>
+                            </li>
+                            @endif
+                        </ul>
+                    </div>
+                </div>
+
+
+
+
+ 
+
+
+
                 
                 
-                <div class="col-sm-9 col-md-5 col-lg-5">
+                <div class="col-sm-8 col-md-5 col-md-push-4 col-lg-5 col-lg-push-4">
                 <div class="filter" style="padding-right: 10px; display: inline-block; float:left">               
                     <div class="top-drop-btn">
                         <div class="dropdown show">
@@ -79,7 +145,7 @@ $categories = ProductType::select('id', 'name')->where('status', '1')->get();
                         </div>
                     </div>
                 </div>
-                    <div class="top-search" style="display:inline-block; width: 79%; margin: 0px; !important">
+                    <div class="top-search" style="display:inline-block;  margin: 0px; !important">
                         <form action="{{Route('search-coupon')}}" method="get">
                             <div class="search-wrap">
                                 <input type="text" name="title" placeholder="Search for mobile offers, watches, food...">
@@ -168,59 +234,7 @@ $categories = ProductType::select('id', 'name')->where('status', '1')->get();
                     </div>
                 </div>-->
 
-                <div class=" col-md-4 col-lg-4" style="width:50%" >
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                            <i class="icofont-navigation-menu"></i>                       
-                        </button>
-                    </div>
-                    <div style="padding: 8px;" class="nav-bar collapse navbar-collapse" id="myNavbar">
-                        <ul>
-                            @php
-                            use Illuminate\Support\Facades\Cookie;
-                            if (Auth()->guard('frontend')->guest() && Cookie::has('guest_user_halaldeals')) {
-                            $user_id = Cookie::get('guest_user_halaldeals');
-                            } else if(!Auth()->guard('frontend')->guest()) {
-                            $user_id = Auth()->guard('frontend')->user()->id;
-                            }else{
-                            $user_id=0;
-                            }
-                            if($user_id!==0){
-                            $cart_count=App\Cart::where('user_id','=',$user_id)->wherestatus('1')->count();
-                            }else{
-                            $cart_count=0;
-                            }
-                            $wallet=App\Business::where('user_id','=',$user_id)->first();
-                            @endphp
-                            @if (Auth()->guard('frontend')->guest() || (isset(Auth()->guard('frontend')->user()->type_id) && Auth()->guard('frontend')->user()->type_id ==="4"))
-                            <li class="cart-menu"><a href="{{ Route('cart') }}" title="cart"><i style="font-size:22px; color: darkgreen;" class="icofont-shopping-cart"></i><span id="cart_count">{{$cart_count}}</span></a></li>
-                            @endif
-
-                            @if (Auth()->guard('frontend')->guest())
-                            <li><a class="hvr-signin" style=" " href="javascript:;" onclick="showSigninModal();">Login</a></li>
-                            <li><a class="hvr-signup" style=" " href="javascript:;" onclick="showSignupModal();">Signup</a></li>
-                            
-                            @else
-                            @if (Auth()->guard('frontend')->user()->type_id ==="3")
-                            <li class="cart-menu nw"><a style="font-size:18px; color: black;" href="{{Route('withdrawal-wallet')}}" title="Wallet"><i style="font-size:22px; color: darkgreen;" class="icofont-wallet"></i><i style="font-size:22px; color: darkgreen;" class="fa fa-gbp" aria-hidden="true"></i>{{number_format($wallet->wallet_amount,2)}}</a></li>
-                            @endif
-                            <li class="profile-menu">
-                                <img src="{{(Auth()->guard('frontend')->user()->image!='')? URL::asset('public/uploads/frontend/profile_picture/preview').'/'.Auth()->guard('frontend')->user()->image:URL::asset('public/frontend/images/default-pic.jpeg') }}" alt="" />
-                            </li>
-                            <li class="profile-drop-menu">
-                                <div class="dropdown show">
-                                    <a style="color: black;" class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth()->guard('frontend')->user()->full_name }}</a>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                        <a class="dropdown-item" href="{{ Route('dashboard') }}">Dashboard</a>
-                                        <a class="dropdown-item" href="{{ Route('my-profile') }}">My Profile</a>
-                                        <a class="dropdown-item" href="{{ Route('logout') }}">Logout</a>
-                                    </div>
-                                </div>
-                            </li>
-                            @endif
-                        </ul>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div>

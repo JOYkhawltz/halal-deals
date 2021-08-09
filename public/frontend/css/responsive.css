@@ -1,7 +1,16 @@
 
+@media only screen and (min-width: 1200px)  {
+    .top-search{width: 85%;}
+    
+
+
+}
+
+
+
 
 @media only screen and (min-width: 960px)  {
-
+    .top-search{width: 80%;}
     .banner-search-caption{ max-width: 800px;}
     .top-banner h2{ font-size: 30px;}
 .tab_dsh_1.col-md-2.col-sm-3{
@@ -22,6 +31,7 @@
 @media only screen and (min-width: 768px) and (max-width: 959px) {
 
     .banner-search-caption{ max-width: 580px;}
+    .top-search{width: 79%;}
     .top-banner h2{ font-size: 25px; padding-bottom: 15px;}
     .top-drop-btn a{ font-size: 10px;}
     .deflt-btn{ font-size: 12px; padding: 8px 5px;}
@@ -157,7 +167,8 @@
 }
 
 @media only screen and (min-width: 320px) and (max-width: 479px) {
-
+    .row{ }
+    .top-search{width: 75%;}
     .banner-search-caption{ max-width: 200px;}
     .top-banner h2{ font-size: 15px; font-weight: 600; line-height: 15px; padding-bottom: 15px;}
     .banner-slider .owl-nav .owl-prev{ left: 5px;}
