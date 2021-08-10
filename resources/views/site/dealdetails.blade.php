@@ -23,6 +23,14 @@
                                             <img src="{{($image->image_name!==NULL)?URL::asset('public/uploads/frontend/product/original/'.$image->image_name):URL::asset('public/frontend/images/box.png')}}" />
                                         </li>
                                         @endforeach
+                                        <li  style=" text-align: center;">
+                                        @if(!empty($advert_detail->youtube_url))
+                                        <iframe  height="400" width= "100%"  src="{{$advert_detail->youtube_url}}">
+                                            </iframe>
+                                             @else
+                                                No url found
+                                             @endif
+                                            </li>
                                         @endif                                   
                                     </ul>
                                 </div>
@@ -36,6 +44,16 @@
                                             <img src="{{($image->image_name!==NULL)?URL::asset('public/uploads/frontend/product/preview/'.$image->image_name):URL::asset('public/frontend/images/box.png')}}" />
                                         </li>
                                         @endforeach
+
+                                        <li>
+                                        @if(!empty($advert_detail->youtube_url))
+                                        <iframe width="115" height="91" src="{{$advert_detail->youtube_url}}">
+                                            </iframe>
+                                             @else
+                                                No url found
+                                             @endif
+                                            </li>
+ 
                                         @endif                                         
                                     </ul>
                                 </div>
