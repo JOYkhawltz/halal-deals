@@ -164,14 +164,14 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="usr"><strong>Cost Price</strong></label>
-                                    <p id="cost_price">${{number_format($model->cost_price,2)}}</p>
+                                    <p id="cost_price">£{{number_format($model->cost_price,2)}}</p>
                                     <span class="help-block"></span> 
                                 </div>
                             </div> 
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="usr"><strong>HD Price</strong></label>
-                                    <p id="hd_price">${{number_format($model->hd_price,2)}}</p>
+                                    <p id="hd_price">£{{number_format($model->hd_price,2)}}</p>
                                     <span class="help-block"></span> 
                                 </div>
                             </div>

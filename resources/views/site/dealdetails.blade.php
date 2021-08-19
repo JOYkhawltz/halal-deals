@@ -113,7 +113,7 @@
             </div>
 
             <div class="accordian_area">
-                <h1 class="inner-heading">Details</h1>
+                <h1 class="inner-heading" style="font-size: 2.4rem; text-align: center; color: green;">Details</h1>
                 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingOne">
@@ -219,12 +219,12 @@
 
                         </ul>
                     </div>
-
-                    <div class="panel panel-default">
+                    <!-- youtube vedio in main advert_detail -->
+                    <!-- <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingFour">
-                            <h4 class="panel-title">
+                            <h4 class="panel-title"> -->
                                 <!-- <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour" class="collapsed"> -->
-                                <a>
+                                <!-- <a>
                                     Embeded Youtube Video
                                 </a>
                             </h4>
@@ -239,7 +239,7 @@
                                 @endif
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingTwo">
@@ -266,12 +266,12 @@
                                 </a>
                             </h4>
                         </div>
-                        <div id="collapseThree" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
-                            Advert :{{$advert_detail->smallprint}}<br>
-                            Specific times details : {{$advert_detail->spec_times_details}}<br>
-                            New customer only : {{($advert_detail->new_cust_only=="1")?"yes":"no"}}<br>
-                            Product : {{$model->smallprint}}<br>
-                            Business : {{$bus_desc->smallprint}}
+                        <div id="collapseThree" class="panel-collapse collapse show" style="padding: 20px 20px;" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+                        <b>Advert :</b>{{$advert_detail->smallprint}}<br>
+                        <b> Specific times details :</b> {{$advert_detail->spec_times_details}}<br>
+                        <b> New customer only :</b> {{($advert_detail->new_cust_only=="1")?"yes":"no"}}<br>
+                        <b> Product :</b> {{$model->smallprint}}<br>
+                        <b> Business :</b> {{$bus_desc->smallprint}}
                         </div>
                     </div>
                      

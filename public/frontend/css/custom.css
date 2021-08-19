@@ -778,15 +778,14 @@ body{ background:#ffffff; margin:0px; padding:0px !important; font-size: 14px; l
 }
 .accordian_area #accordion .panel-title a {
     display: block;
-    padding: 12px 15px;
-    background: #096802;
-    color: #fff;
-    font-size: 14px;
-    font-weight: bold;
+    padding: 8px 10px;
+    color: green;
+    font-size: 2.0rem;
+    font-weight: 700;
     box-shadow: 0 0 10px rgba(0,0,0,.05);
     position: relative;
     transition: all 0.5s ease 0s;
-    box-shadow: 0 1px 2px rgba(43,59,93,0.30);
+    box-shadow: 0 1px 0px rgba(43,59,93,0.30);
 }
 .accordian_area #accordion .panel-title a.collapsed{
     box-shadow: none;
