@@ -18,7 +18,8 @@
         "laravel/tinker": "^1.0",
         "nwidart/laravel-modules": "^4.1",
         "torann/laravel-meta-tags": "^3.0",
-        "yajra/laravel-datatables-oracle": "^9.3"
+        "yajra/laravel-datatables-oracle": "^9.3",
+        "cornford/googlmapper": "2.*"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",

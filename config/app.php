@@ -148,6 +148,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Anouar\Paypalpayment\PaypalpaymentServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        Cornford\Googlmapper\MapperServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -215,5 +216,6 @@ return [
         'DataTables' => Yajra\DataTables\Facades\DataTables::class,
         'Paypalpayment' => Anouar\Paypalpayment\Facades\PaypalPayment::class,
         'Charts' => ConsoleTVs\Charts\Facades\Charts::class,
+        'Mapper' => Cornford\Googlmapper\Facades\MapperFacade::class,
     ],
 ];

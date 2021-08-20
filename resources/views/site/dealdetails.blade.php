@@ -219,6 +219,24 @@
 
                         </ul>
                     </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingFour">
+                            <h4 class="panel-title">
+                                <a>
+                                    MAP
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseFour" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="headingFour" data-parent="#accordion">
+                            <div class="panel-body">
+                                <div style="width: 100%; height: 500px;">
+	                              {!! Mapper::render() !!}
+                                </div>    
+                            </div>
+                        </div>
+                    </div>
+
+
                     <!-- youtube vedio in main advert_detail -->
                     <!-- <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingFour">
