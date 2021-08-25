@@ -229,7 +229,7 @@
                         </div>
                         <div id="collapseFour" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="headingFour" data-parent="#accordion">
                             <div class="panel-body">
-                                <div style="width: 100%; height: 500px;">
+                                <div style="width: 90%; height: 400px;">
 	                              {!! Mapper::render() !!}
                                 </div>    
                             </div>

@@ -62,13 +62,26 @@
                 <div class="help-block" id="error-business_name"></div>
             </div>
         </div>
-        <div class="col-sm-6">
+        <!-- <div class="col-sm-6">
             <div class="form-group">
                 <input type="text" class="form-control" name="address1" placeholder="Address1">
                 <div class="help-block" id="error-address1"></div>
             </div>
+        </div> -->
+        <div class="col-sm-6">
+            <div class="form-group">
+                <input type="text" id="address-input" name="address1" class="form-control map-input" placeholder="Address1">
+                <input type="hidden" name="address_latitude" id="address-latitude" value="0" />
+                <input type="hidden" name="address_longitude" id="address-longitude" value="0" />
+                <div class="help-block" id="error-address1"></div>
+            </div>
         </div>
     </div>
+    
+    <div id="address-map-container" style="width:100%;height:400px; ">
+    <div style="width: 100%; height: 100%" id="address-map"></div>
+    </div>
+    
     <div class="form-row">
         <div class="col-sm-12">
         </div>
@@ -123,4 +136,9 @@
     </div>           
 </div>
 </div>
+@stop
+@section('js')
+    @parent
+    <script src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAPS_API_KEY') }}&libraries=places&callback=initialize" async defer></script>
+    <script src="/js/mapInput.js"></script>
 @stop
