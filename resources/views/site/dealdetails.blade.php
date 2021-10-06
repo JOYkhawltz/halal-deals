@@ -219,24 +219,6 @@
 
                         </ul>
                     </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="headingFour">
-                            <h4 class="panel-title">
-                                <a>
-                                    MAP
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseFour" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="headingFour" data-parent="#accordion">
-                            <div class="panel-body">
-                                <div style="width: 90%; height: 400px;">
-	                              {!! Mapper::render() !!}
-                                </div>    
-                            </div>
-                        </div>
-                    </div>
-
-
                     <!-- youtube vedio in main advert_detail -->
                     <!-- <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingFour">
@@ -290,6 +272,22 @@
                         <b> New customer only :</b> {{($advert_detail->new_cust_only=="1")?"yes":"no"}}<br>
                         <b> Product :</b> {{$model->smallprint}}<br>
                         <b> Business :</b> {{$bus_desc->smallprint}}
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingFour">
+                            <h4 class="panel-title">
+                                <a>
+                                    MAP
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseFour" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="headingFour" data-parent="#accordion">
+                            <div class="panel-body">
+                                <div style="width: 100%; height: 350px;">
+	                              {!! Mapper::render() !!}
+                                </div>    
+                            </div>
                         </div>
                     </div>
                      

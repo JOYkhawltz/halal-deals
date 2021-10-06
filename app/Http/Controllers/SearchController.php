@@ -242,7 +242,7 @@ class SearchController extends Controller {
         $data['bus_desc'] = $bus_detail = Business::findOrFail($details->bus_ID);
         $data['adverts'] = Advert::where('prod_ID', $details->prod_ID)->where('date_finish', '>=', Carbon::now()->format('Y-m-d'))->where('status', '=', '1')->where('advert_ID', '<>', $id)->get();
 //        print_r($data);die;
-        Mapper::map(25.105128817993943, 67.28984626835889);
+        Mapper::map(51.51463616383405, -0.12635195708768257);
         if (count($model) > 0 && $model->status != '3') {
             return view('site.dealdetails', $data);
         }

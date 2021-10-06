@@ -101,7 +101,7 @@ class SiteController extends Controller {
             $model = User::create($input);
             if ($model->type_id === '3') {
                 
-                Business::create(['bus_ID' => $this->get_business_id(), 'user_id' => $model->id, 'name' => $request->input('business_name'),'address1'=>$request->input('address1'),'address2'=>$request->input('address2'),'town'=>$request->input('town'),"city"=>$request->input('city'),'post_code'=>$request->input("postcode"), 'terms_and_cond_agreed' => $terms_and_cond_agreed, 'terms_and_cond_date' => date('Y-m-d')]);
+                Business::create(['bus_ID' => $this->get_business_id(), 'user_id' => $model->id, 'name' => $request->input('business_name'),'address1'=>$request->input('address1'),'address_longitude'=>$request->input('address_longitude'),'address_latitude'=>$request->input('address_latitude'),'address2'=>$request->input('address2'),'town'=>$request->input('town'),"city"=>$request->input('city'),'post_code'=>$request->input("postcode"), 'terms_and_cond_agreed' => $terms_and_cond_agreed, 'terms_and_cond_date' => date('Y-m-d')]);
             }
             $link = Route('active-account', ['id' => base64_encode($model->id), 'token' => $model->active_token]);
 
